@@ -1029,21 +1029,28 @@ body {
     color: white !important;
 }
 
-/* Dark mode: Footer - darker background with white text */
+/* Dark mode: Footer - dark background with light text */
 [data-theme="dark"] .footer {
-    background-color: #0a0a0a;
+    background-color: #111111 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     border-top: 1px solid var(--color-border);
 }
 
-[data-theme="dark"] .footer,
 [data-theme="dark"] .footer p,
-[data-theme="dark"] .footer h4,
-[data-theme="dark"] .footer a {
+[data-theme="dark"] .footer h4 {
     color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .footer a {
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 [data-theme="dark"] .footer a:hover {
     color: white !important;
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Dark mode: CTA section - ensure white text */
