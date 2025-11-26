@@ -1032,7 +1032,8 @@ body {
 
 /* Dark mode specific adjustments */
 [data-theme="dark"] .nav {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(10px);
 }
 
 [data-theme="dark"] .section-dark {
