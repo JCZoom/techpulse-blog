@@ -23,11 +23,18 @@
                     <a href="#newsletter">Newsletter</a>
                     <a href="about.html">About</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                    <div class="theme-toggle">
+                        <button data-theme-option="light" title="Light mode">☀️</button>
+                        <button data-theme-option="auto" title="System" class="active">Auto</button>
+                        <button data-theme-option="dark" title="Dark mode">🌙</button>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>

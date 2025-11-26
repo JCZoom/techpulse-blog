@@ -239,6 +239,64 @@ const scrollToElement = (target) => {
     });
 };
 
+// ===== Theme Toggle =====
+const themeToggle = {
+    init() {
+        this.buttons = document.querySelectorAll('[data-theme-option]');
+        this.currentTheme = localStorage.getItem('theme') || 'auto';
+        
+        // Set initial theme
+        this.applyTheme(this.currentTheme);
+        this.updateActiveButton(this.currentTheme);
+        
+        // Add click handlers
+        this.buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.dataset.themeOption;
+                this.setTheme(theme);
+            });
+        });
+        
+        // Listen for system theme changes
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (this.currentTheme === 'auto') {
+                    this.applyTheme('auto');
+                }
+            });
+        }
+    },
+    
+    setTheme(theme) {
+        this.currentTheme = theme;
+        localStorage.setItem('theme', theme);
+        this.applyTheme(theme);
+        this.updateActiveButton(theme);
+    },
+    
+    applyTheme(theme) {
+        let actualTheme = theme;
+        
+        if (theme === 'auto') {
+            // Use system preference
+            actualTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches 
+                ? 'dark' 
+                : 'light';
+        }
+        
+        document.documentElement.setAttribute('data-theme', actualTheme);
+    },
+    
+    updateActiveButton(theme) {
+        this.buttons.forEach(button => {
+            button.classList.toggle('active', button.dataset.themeOption === theme);
+        });
+    }
+};
+
+// Initialize theme toggle on page load
+themeToggle.init();
+
 // ===== Console Message =====
 console.log('%c📰 TechPulse Blog Loaded Successfully!', 'color: #0066ff; font-size: 16px; font-weight: bold;');
 console.log('%cBuilt with modern web standards', 'color: #666; font-size: 12px;');
