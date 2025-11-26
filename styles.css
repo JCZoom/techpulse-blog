@@ -9,7 +9,7 @@
     /* Color Palette - Modern & Clean */
     --color-primary: #000000;
     --color-secondary: #1a1a1a;
-    --color-accent: #0066ff;
+    --color-accent: #3B82F6;
     --color-text: #1a1a1a;
     --color-text-light: #666666;
     --color-background: #ffffff;
@@ -370,7 +370,7 @@ body {
 
 /* ===== CTA Section ===== */
 .cta-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4F46E5 0%, #0EA5E9 100%);
     color: white;
     text-align: center;
 }
@@ -853,7 +853,7 @@ body {
 
 /* Newsletter Section */
 .newsletter-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4F46E5 0%, #0EA5E9 100%);
     color: white;
     text-align: center;
 }
