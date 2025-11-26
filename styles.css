@@ -1034,6 +1034,23 @@ body {
 [data-theme="dark"] .nav {
     background-color: rgba(10, 10, 10, 0.95) !important;
     backdrop-filter: blur(10px);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .nav .logo {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: #60A5FA;
+}
+
+[data-theme="dark"] .mobile-menu-btn span {
+    background-color: #ffffff;
 }
 
 [data-theme="dark"] .section-dark {
