@@ -1,0 +1,6 @@
+# Don't redirect JSON files
+/content/*  200
+/*.json     200
+
+# Everything else can be handled normally
+/*          /index.html   404
