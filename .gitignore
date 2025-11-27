@@ -39,3 +39,17 @@ build/
 # Temporary files
 *.tmp
 temp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# Pipeline
+pipeline/pipeline.log
+*.log

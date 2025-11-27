@@ -1,0 +1,146 @@
+# Your TechPulse Taste Profile
+# This defines what content you want to see
+
+# High Priority Topics (scored higher)
+priority_topics:
+  - name: "Enterprise AI Adoption for SaaS"
+    weight: 1.2
+    keywords: ["enterprise AI", "SaaS AI", "B2B AI", "enterprise adoption", "AI integration", "AI platform", "enterprise customers", "mid-market", "$100M revenue", "200-500 employees"]
+  
+  - name: "Building AI Division & Center of Excellence"
+    weight: 1.2
+    keywords: ["AI CoE", "Center of Excellence", "AI team", "AI organization", "AI strategy", "AI leadership", "AI hiring", "AI governance", "AI operating model"]
+  
+  - name: "AI for COO & Operations"
+    weight: 1.1
+    keywords: ["COO", "operations", "operational efficiency", "supply chain", "process optimization", "AI operations", "business operations"]
+  
+  - name: "Enterprise AI Strategy & Roadmap"
+    weight: 1.1
+    keywords: ["AI strategy", "AI roadmap", "AI transformation", "digital transformation", "AI maturity", "AI readiness", "AI implementation"]
+  
+  - name: "RAG & Retrieval Systems"
+    weight: 1.0
+    keywords: ["RAG", "retrieval", "vector database", "embeddings", "semantic search"]
+  
+  - name: "Process Automation"
+    weight: 1.0
+    keywords: ["automation", "workflow", "process", "orchestration", "agents"]
+  
+  - name: "New Model Releases & Evals"
+    weight: 1.0
+    keywords: ["model release", "benchmark", "evaluation", "performance", "MMLU", "HumanEval", "new model", "GPT", "Claude", "Gemini", "Llama"]
+  
+  - name: "AI Business Cases & ROI"
+    weight: 1.0
+    keywords: ["customer retention", "business case", "ROI", "enterprise", "revenue", "cost savings", "productivity", "competitive advantage"]
+  
+  - name: "Personal Productivity & Automation"
+    weight: 0.9
+    keywords: ["personal automation", "productivity", "workflow", "tools", "efficiency", "life hacks"]
+  
+  - name: "AI Job Market Impact"
+    weight: 0.8
+    keywords: ["job market", "employment", "workforce", "hiring", "layoffs", "skills", "career"]
+  
+  - name: "McKinsey & Strategy Reports"
+    weight: 0.8
+    keywords: ["McKinsey", "strategy", "market analysis", "industry report", "forecast", "trends"]
+  
+  - name: "Big Tech Moves & Partnerships"
+    weight: 0.8
+    keywords: ["NVIDIA", "Microsoft", "Google", "Amazon", "partnership", "acquisition", "deal", "contract", "investment"]
+  
+  - name: "Grok & xAI"
+    weight: 0.7
+    keywords: ["Grok", "xAI", "Elon Musk", "X.AI"]
+  
+  - name: "AI Privacy & Surveillance"
+    weight: 0.9
+    keywords: ["surveillance", "privacy", "data protection", "GDPR", "civil liberties", "facial recognition", "tracking"]
+  
+  - name: "Cybersecurity & Hacking"
+    weight: 0.8
+    keywords: ["cybersecurity", "hacking", "cyber warfare", "vulnerability", "exploit", "breach", "security"]
+  
+  - name: "AI Cost Efficiency & Value"
+    weight: 0.8
+    keywords: ["cost", "pricing", "value", "efficiency", "compute", "GPT Pro", "Claude Pro", "cost per token"]
+
+# Medium Priority Topics
+secondary_topics:
+  - name: "Enterprise AI Vendors & Solutions"
+    weight: 0.8
+    keywords: ["enterprise AI vendors", "AI platforms", "AI solutions", "vendor comparison", "build vs buy", "AI procurement"]
+  
+  - name: "Competitive Intelligence - AI Adoption"
+    weight: 0.8
+    keywords: ["competitor AI", "market landscape", "competitive analysis", "AI differentiation", "market positioning"]
+  
+  - name: "AI Governance & Compliance"
+    weight: 0.7
+    keywords: ["AI governance", "compliance", "regulation", "risk management", "AI policy", "ethical AI", "responsible AI"]
+  
+  - name: "Developer Tools & AI Coding"
+    weight: 0.7
+    keywords: ["developer tools", "coding assistant", "IDE", "Cursor", "Copilot", "code generation"]
+  
+  - name: "AI Infrastructure"
+    weight: 0.7
+    keywords: ["infrastructure", "GPU", "cloud", "deployment", "scaling", "MLOps"]
+  
+  - name: "Research Papers"
+    weight: 0.6
+    keywords: ["research", "paper", "arxiv", "study", "algorithm", "technique"]
+
+# Content to Avoid (negative weight)
+avoid_topics:
+  - name: "Generic Business News"
+    weight: -0.3
+    keywords: ["stock price", "quarterly earnings", "investor relations"]
+  
+  - name: "Celebrity AI Hype"
+    weight: -0.4
+    keywords: ["celebrity", "influencer", "viral", "trend"]
+  
+  - name: "Shallow AI Overviews"
+    weight: -0.3
+    keywords: ["what is AI", "introduction to", "beginner's guide", "AI for dummies"]
+
+# Source Trust Levels (multiplier for final score)
+source_weights:
+  "Latent Space": 1.2           # Top priority!
+  "McKinsey Technology": 1.1
+  "OpenAI Blog": 1.1
+  "Anthropic Blog": 1.1
+  "VentureBeat AI": 1.0
+  "TechCrunch AI": 0.9
+  "Hacker News": 1.0
+  "Every.to": 0.9
+  "The Rundown AI": 0.8
+  "Superhuman AI": 0.8
+
+# Content preferences
+preferences:
+  min_depth_score: 0.6          # Prefer substantial content
+  prefer_technical: true        # Technical > marketing
+  prefer_data_driven: true      # Love numbers and benchmarks
+  prefer_actionable: true       # Want practical takeaways
+  
+  # Length preference (all acceptable)
+  accept_quick_reads: true      # 2-5 min
+  accept_medium_reads: true     # 5-10 min
+  accept_deep_dives: true       # 10+ min
+  
+  # Format preference
+  prefer_links: true            # Curator style, not rewriting
+  want_images: true             # Extract or generate images
+  want_videos: true             # Podcast/video content welcome
+
+# Scoring weights for final calculation
+scoring:
+  topic_relevance: 0.40         # 40% - How well it matches topics
+  source_trust: 0.15            # 15% - Source reliability
+  content_quality: 0.20         # 20% - Depth and substance
+  recency: 0.15                 # 15% - How recent
+  uniqueness: 0.10              # 10% - Novel or unique angle

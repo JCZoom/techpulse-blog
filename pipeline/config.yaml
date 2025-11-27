@@ -1,0 +1,18 @@
+# TechPulse Pipeline Configuration
+
+pipeline:
+  max_articles_per_day: 50    # Increased to get more runners-up
+  lookback_hours: 72          # Look back further for more articles
+  min_word_count: 50          # Lower threshold for more variety
+  
+output:
+  content_dir: "../content"  # Website's content directory
+  latest_file: "latest.json"
+  daily_dir: "daily"
+  archive_by_month: true
+
+# AI-powered scoring (Phase 2)
+scoring:
+  method: "ai"                # Use AI scoring (set to "placeholder" to disable)
+  default_score: 8.0          # Fallback score if AI fails
+  random_variance: 1.5        # For placeholder mode only

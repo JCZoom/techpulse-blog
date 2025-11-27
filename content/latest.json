@@ -1,0 +1,129 @@
+{
+  "generated_at": "2025-11-26T23:30:41.530795",
+  "date": "November 26, 2025",
+  "hero": {
+    "title": "A weekend ‘vibe code’ hack by Andrej Karpathy quietly sketches the missing layer of enterprise AI orchestration",
+    "subtitle": "This weekend, Andrej Karpathy , the former director of AI at Tesla and a founding member of OpenAI, decided he wanted to read a book. But he did not want to read it alone. He wanted to read it accompanied by a committee of artificial intelligences, each offering its own...",
+    "category": "Building Ai Division & Center Of Excellence",
+    "url": "https://venturebeat.com/ai/a-weekend-vibe-code-hack-by-andrej-karpathy-quietly-sketches-the-missing",
+    "source": "VentureBeat AI",
+    "author": "michael.nunez@venturebeat.com (Michael Nuñez)",
+    "read_time": "8 min",
+    "score": 8.2,
+    "published": "2025-11-26T14:00:00",
+    "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/2Ey8QusmYk8nxrgwRnt2il/f17035cb1ab8a293f3de798fba1978a0/nuneybits_A_glowing_computer_screen_on_a_laptop_computer_code_s_c5238c15-75e5-4c2b-9f4b-e530ad71adf0.webp?w=300&q=30"
+  },
+  "headlines": [
+    {
+      "title": "Black Forest Labs launches Flux.2 AI image models to challenge Nano Banana Pro and Midjourney",
+      "excerpt": "It's not just Google's Gemini 3 , Nano Banana Pro , and Anthropic's Claude Opus 4.5 we have to be thankful for this year around the Thanksgiving holiday here in...",
+      "category": "Building Ai Division & Center Of Excellence",
+      "url": "https://venturebeat.com/ai/black-forest-labs-launches-flux-2-ai-image-models-to-challenge-nano-banana",
+      "source": "VentureBeat AI",
+      "read_time": "12 min",
+      "published": "2025-11-26T03:46:00",
+      "score": 8.2,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/4enOwMu4NUlXF6NXOriDEH/b99b0fee6403bc292622b870a5b234a6/AI_agent_exploring_different_branches.jpg?w=300&q=30"
+    },
+    {
+      "title": "Alibaba's AgentEvolver lifts model performance in tool use by ~30% using synthetic, auto-generated tasks",
+      "excerpt": "Researchers at Alibaba’s Tongyi Lab have developed a new framework for self-evolving agents that create their own training data by exploring their application environments. The framework, AgentEvolver , uses the...",
+      "category": "New Model Releases & Evals",
+      "url": "https://venturebeat.com/ai/alibabas-agentevolver-lifts-model-performance-in-tool-use-by-30-using",
+      "source": "VentureBeat AI",
+      "read_time": "6 min",
+      "published": "2025-11-26T00:00:00",
+      "score": 8.0,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/3xnd8Pd0WlOl5td1iZkwG5/7e244c4fe5fda98c5550d87cd9c511c2/2Q______1_.jpeg?w=300&q=30"
+    },
+    {
+      "title": "What enterprises should know about The White House's new AI 'Manhattan Project' the Genesis Mission",
+      "excerpt": "President Donald Trump’s new “ Genesis Mission ” unveiled Monday, November 24, 2025, is billed as a generational leap in how the United States does science akin to the Manhattan...",
+      "category": "Enterprise Ai Strategy & Roadmap",
+      "url": "https://venturebeat.com/ai/what-enterprises-should-know-about-the-white-houses-new-ai-manhattan-project",
+      "source": "VentureBeat AI",
+      "read_time": "12 min",
+      "published": "2025-11-25T15:52:00",
+      "score": 7.7,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5m2x1YdAEaqWJLhiH1Oh3S/cf8162a0477a1a70dbebd393e0ce2a3d/0hw9lFQJS_Zy6yiTAktWc.png?w=300&q=30"
+    },
+    {
+      "title": "OpenAI now lets enterprises choose where to host their data",
+      "excerpt": "OpenAI expanded its data residency regions for ChatGPT and its API, giving enterprise users the option to store and process their data closest to their business operations and better comply...",
+      "category": "Building Ai Division & Center Of Excellence",
+      "url": "https://venturebeat.com/ai/openai-now-lets-enterprises-choose-where-to-host-their-data",
+      "source": "VentureBeat AI",
+      "read_time": "2 min",
+      "published": "2025-11-25T05:00:00",
+      "score": 7.7,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5pK7nWLbFVRgLkc1gAENy4/4347da15bb2f14f54d47301f1d4aa030/AI_mandate.png?w=300&q=30"
+    },
+    {
+      "title": "Anthropic’s Claude Opus 4.5 is here: Cheaper AI, infinite chats, and coding skills that beat humans",
+      "excerpt": "Anthropic released its most capable artificial intelligence model yet on Monday, slashing prices by roughly two-thirds while claiming state-of-the-art performance on software engineering tasks — a strategic move that intensifies...",
+      "category": "Building Ai Division & Center Of Excellence",
+      "url": "https://venturebeat.com/ai/anthropics-claude-opus-4-5-is-here-cheaper-ai-infinite-chats-and-coding",
+      "source": "VentureBeat AI",
+      "read_time": "9 min",
+      "published": "2025-11-24T21:35:00",
+      "score": 7.6,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5vkUnAXbEuLYlu69OvCLLj/b86bfbe8c5e726da1c5f41886d30097a/nuneybits_Vector_art_of_a_computer_image_in_burnt_orange_1655df10-3e1f-4619-bb97-ffc10b141b64.webp?w=300&q=30"
+    },
+    {
+      "title": "How to avoid becoming an 'AI-first' company with zero real AI usage",
+      "excerpt": "Remember the first time you heard your company was going AI-first ? Maybe it came through an all-hands that felt different from the others. The CEO said, “By Q3, every...",
+      "category": "Enterprise Ai Adoption For Saas",
+      "url": "https://venturebeat.com/ai/how-to-avoid-becoming-an-ai-first-company-with-zero-real-ai-usage",
+      "source": "VentureBeat AI",
+      "read_time": "9 min",
+      "published": "2025-11-24T05:00:00",
+      "score": 7.5,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/1g8nmbi7oAHyjfQNPztaUi/02c20bc6a85bbab1d13fffc88b356a9b/crimedy7_illustration_of_a_house_of_data_--ar_169_--v_7_ff997425-90c8-4492-b29d-74de45555488_3.png?w=300&q=30"
+    }
+  ],
+  "runners_up": [
+    {
+      "title": "OpenAI claims teen circumvented safety features before suicide that ChatGPT helped plan",
+      "url": "https://techcrunch.com/2025/11/26/openai-claims-teen-circumvented-safety-features-before-suicide-that-chatgpt-helped-plan/",
+      "source": "TechCrunch AI",
+      "author": "Amanda Silberling",
+      "category": "Building Ai Division & Center Of Excellence",
+      "read_time": "1 min",
+      "published": "2025-11-26T20:26:36",
+      "score": 7.4,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2195918462.jpg?w=1024"
+    }
+  ],
+  "video_spotlight": null,
+  "categories": [
+    {
+      "name": "Building Ai Division & Center Of Excellence",
+      "slug": "Building AI Division & Center of Excellence",
+      "count": 5,
+      "icon": "📄"
+    },
+    {
+      "name": "New Model Releases & Evals",
+      "slug": "New Model Releases & Evals",
+      "count": 1,
+      "icon": "📄"
+    },
+    {
+      "name": "Enterprise Ai Strategy & Roadmap",
+      "slug": "Enterprise AI Strategy & Roadmap",
+      "count": 1,
+      "icon": "📄"
+    },
+    {
+      "name": "Enterprise Ai Adoption For Saas",
+      "slug": "Enterprise AI Adoption for SaaS",
+      "count": 1,
+      "icon": "📄"
+    }
+  ],
+  "stats": {
+    "total_articles": 8,
+    "categories_count": 4,
+    "runners_up_count": 1
+  }
+}

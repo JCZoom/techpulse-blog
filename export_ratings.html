@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPulse - Export Ratings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .stats {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .stat-label {
+            color: #666;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .success {
+            background: #10B981;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 0.5rem;
+            color: #856404;
+        }
+        
+        .instructions ol {
+            margin-left: 1.5rem;
+            color: #856404;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .no-ratings {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Export Your Ratings</h1>
+        <p class="subtitle">Export your article ratings to train the AI</p>
+        
+        <div class="stats" id="stats">
+            <div class="stat-row">
+                <span class="stat-label">Total Ratings:</span>
+                <span class="stat-value" id="total">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">👍 Positive:</span>
+                <span class="stat-value" id="positive">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">👎 Negative:</span>
+                <span class="stat-value" id="negative">0</span>
+            </div>
+        </div>
+        
+        <button id="exportBtn" onclick="exportRatings()">📥 Download ratings.json</button>
+        
+        <div class="success" id="success">
+            ✓ Ratings exported successfully!
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Next Steps:</h3>
+            <ol>
+                <li>Click the button above to download <code>ratings.json</code></li>
+                <li>Move the file to <code>pipeline/</code> folder</li>
+                <li>Run the learning script:
+                    <br><code>python3 pipeline/learn_from_ratings.py pipeline/ratings.json</code>
+                </li>
+                <li>The AI will automatically adjust to your preferences!</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function loadStats() {
+            const ratingsJson = localStorage.getItem('techpulse_ratings');
+            
+            if (!ratingsJson) {
+                document.getElementById('stats').innerHTML = '<div class="no-ratings">No ratings yet! Start rating articles on TechPulse.</div>';
+                document.getElementById('exportBtn').disabled = true;
+                return;
+            }
+            
+            const ratings = JSON.parse(ratingsJson);
+            
+            const total = ratings.length;
+            const positive = ratings.filter(r => r.rating === 'up').length;
+            const negative = ratings.filter(r => r.rating === 'down').length;
+            
+            document.getElementById('total').textContent = total;
+            document.getElementById('positive').textContent = positive;
+            document.getElementById('negative').textContent = negative;
+        }
+        
+        function exportRatings() {
+            const ratingsJson = localStorage.getItem('techpulse_ratings');
+            
+            if (!ratingsJson) {
+                alert('No ratings found!');
+                return;
+            }
+            
+            const ratings = JSON.parse(ratingsJson);
+            
+            // Create export object
+            const exportData = {
+                exported_at: new Date().toISOString(),
+                version: '1.0',
+                total_ratings: ratings.length,
+                ratings: ratings
+            };
+            
+            // Create download
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ratings.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show success
+            const success = document.getElementById('success');
+            success.style.display = 'block';
+            setTimeout(() => {
+                success.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Load stats on page load
+        loadStats();
+    </script>
+</body>
+</html>

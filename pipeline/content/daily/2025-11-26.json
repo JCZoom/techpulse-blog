@@ -1,0 +1,88 @@
+{
+  "date": "2025-11-26",
+  "date_display": "November 26, 2025",
+  "articles": [
+    {
+      "id": "2025-11-26-9352",
+      "title": "A weekend ‘vibe code’ hack by Andrej Karpathy quietly sketches the missing layer of enterprise AI orchestration",
+      "url": "https://venturebeat.com/ai/a-weekend-vibe-code-hack-by-andrej-karpathy-quietly-sketches-the-missing",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-26T14:00:00",
+      "score": 9.4,
+      "word_count": 1518
+    },
+    {
+      "id": "2025-11-25-4270",
+      "title": "What enterprises should know about The White House's new AI 'Manhattan Project' the Genesis Mission",
+      "url": "https://venturebeat.com/ai/what-enterprises-should-know-about-the-white-houses-new-ai-manhattan-project",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-25T15:52:00",
+      "score": 9.1,
+      "word_count": 2303
+    },
+    {
+      "id": "2025-11-25-9412",
+      "title": "Show HN: KiDoom – Running DOOM on PCB Traces",
+      "url": "https://www.mikeayles.com/#kidoom",
+      "source": "Hacker News",
+      "category": "general_tech",
+      "published": "2025-11-25T22:13:35",
+      "score": 8.4,
+      "word_count": 379
+    },
+    {
+      "id": "2025-11-26-1050",
+      "title": "Alibaba's AgentEvolver lifts model performance in tool use by ~30% using synthetic, auto-generated tasks",
+      "url": "https://venturebeat.com/ai/alibabas-agentevolver-lifts-model-performance-in-tool-use-by-30-using",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-26T00:00:00",
+      "score": 7.9,
+      "word_count": 1113
+    },
+    {
+      "id": "2025-11-26-6902",
+      "title": "Black Forest Labs launches Flux.2 AI image models to challenge Nano Banana Pro and Midjourney",
+      "url": "https://venturebeat.com/ai/black-forest-labs-launches-flux-2-ai-image-models-to-challenge-nano-banana",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-26T03:46:00",
+      "score": 7.8,
+      "word_count": 2430
+    },
+    {
+      "id": "2025-11-25-6474",
+      "title": "OpenAI now lets enterprises choose where to host their data",
+      "url": "https://venturebeat.com/ai/openai-now-lets-enterprises-choose-where-to-host-their-data",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-25T05:00:00",
+      "score": 7.7,
+      "word_count": 395
+    },
+    {
+      "id": "2025-11-24-4791",
+      "title": "Anthropic’s Claude Opus 4.5 is here: Cheaper AI, infinite chats, and coding skills that beat humans",
+      "url": "https://venturebeat.com/ai/anthropics-claude-opus-4-5-is-here-cheaper-ai-infinite-chats-and-coding",
+      "source": "VentureBeat AI",
+      "category": "ai_news",
+      "published": "2025-11-24T21:35:00",
+      "score": 7.5,
+      "word_count": 1704
+    }
+  ],
+  "stats": {
+    "total_articles": 7,
+    "avg_score": 8.243850924228962,
+    "sources": [
+      "Hacker News",
+      "VentureBeat AI"
+    ],
+    "categories": [
+      "general_tech",
+      "ai_news"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+# RSS Feed Sources for TechPulse
+# Priority: High priority sources are checked first
+
+sources:
+  # TOP PRIORITY - User's favorites
+  - name: "Latent Space"
+    url: "https://www.latent.space/feed"
+    type: "rss"
+    category: "ai_podcast"
+    priority: "high"
+    description: "The AI Engineer Podcast - Top priority source"
+  
+  # AI-Focused Publications
+  - name: "VentureBeat AI"
+    url: "https://venturebeat.com/category/ai/feed/"
+    type: "rss"
+    category: "ai_news"
+    priority: "high"
+    description: "AI and ML news"
+  
+  - name: "TechCrunch AI"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    type: "rss"
+    category: "ai_news"
+    priority: "high"
+    description: "AI startup and tech news"
+  
+  # Company Blogs
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    type: "rss"
+    category: "ai_research"
+    priority: "high"
+    description: "Official OpenAI announcements and research"
+  
+  - name: "Anthropic Blog"
+    url: "https://www.anthropic.com/news/rss.xml"
+    type: "rss"
+    category: "ai_research"
+    priority: "high"
+    description: "Anthropic updates and research"
+  
+  # General Tech News
+  - name: "Hacker News"
+    url: "https://hnrss.org/frontpage"
+    type: "rss"
+    category: "general_tech"
+    priority: "medium"
+    description: "Top tech stories from HN"
+  
+  # Newsletters with RSS
+  - name: "Every.to"
+    url: "https://every.to/feed"
+    type: "rss"
+    category: "tech_analysis"
+    priority: "medium"
+    description: "Tech business and strategy analysis"
+  
+  # Additional AI Sources
+  - name: "The Rundown AI"
+    url: "https://www.therundown.ai/feed"
+    type: "rss"
+    category: "ai_news"
+    priority: "medium"
+    description: "Daily AI news roundup"
+  
+  - name: "AI News (Superhuman AI)"
+    url: "https://www.superhuman.ai/feed"
+    type: "rss"
+    category: "ai_news"
+    priority: "medium"
+    description: "AI tools and news"
+  
+  # McKinsey AI Insights (if available)
+  - name: "McKinsey Technology"
+    url: "https://www.mckinsey.com/capabilities/mckinsey-digital/rss"
+    type: "rss"
+    category: "tech_strategy"
+    priority: "low"
+    description: "Enterprise tech insights"
+
+# Podcast RSS feeds (Apple Podcasts have RSS feeds)
+podcast_sources:
+  - name: "Latent Space Podcast"
+    apple_url: "https://podcasts.apple.com/us/podcast/latent-space-the-ai-engineer-podcast/id1674008350"
+    rss_url: "https://feeds.transistor.fm/latent-space"
+    priority: "high"
+  
+  - name: "The Artificial Intelligence Show"
+    apple_url: "https://podcasts.apple.com/us/podcast/the-artificial-intelligence-show/id1548733275"
+    # RSS URL to be discovered
+    priority: "medium"
+  
+  - name: "Practical AI"
+    apple_url: "https://podcasts.apple.com/us/podcast/practical-ai-machine-learning-data-science-llm/id1406537385"
+    rss_url: "https://changelog.com/practicalai/feed"
+    priority: "medium"
+
+# Note: These sources may need verification
+# Some feeds might be blocked, rate-limited, or require different URLs
+# The fetcher will handle failures gracefully

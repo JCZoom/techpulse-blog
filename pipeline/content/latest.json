@@ -1,0 +1,96 @@
+{
+  "generated_at": "2025-11-26T18:21:30.655130",
+  "date": "November 26, 2025",
+  "hero": {
+    "title": "A weekend ‘vibe code’ hack by Andrej Karpathy quietly sketches the missing layer of enterprise AI orchestration",
+    "subtitle": "This weekend, Andrej Karpathy , the former director of AI at Tesla and a founding member of OpenAI, decided he wanted to read a book. But he did not want to read it alone. He wanted to read it accompanied by a committee of artificial intelligences, each offering its own...",
+    "category": "AI News",
+    "url": "https://venturebeat.com/ai/a-weekend-vibe-code-hack-by-andrej-karpathy-quietly-sketches-the-missing",
+    "source": "VentureBeat AI",
+    "author": "TechPulse Curator",
+    "read_time": "8 min",
+    "score": 9.4,
+    "published": "2025-11-26T14:00:00"
+  },
+  "headlines": [
+    {
+      "title": "What enterprises should know about The White House's new AI 'Manhattan Project' the Genesis Mission",
+      "excerpt": "President Donald Trump’s new “ Genesis Mission ” unveiled Monday, November 24, 2025, is billed as a generational leap in how the United States does science akin to the Manhattan...",
+      "category": "AI News",
+      "url": "https://venturebeat.com/ai/what-enterprises-should-know-about-the-white-houses-new-ai-manhattan-project",
+      "source": "VentureBeat AI",
+      "read_time": "12 min",
+      "published": "2025-11-25T15:52:00",
+      "score": 9.1
+    },
+    {
+      "title": "Show HN: KiDoom – Running DOOM on PCB Traces",
+      "excerpt": "I got DOOM running in KiCad by rendering it with PCB traces and footprints instead of pixels. Walls are rendered as PCB_TRACK traces, and entities (enemies, items, player) are actual...",
+      "category": "Tech",
+      "url": "https://www.mikeayles.com/#kidoom",
+      "source": "Hacker News",
+      "read_time": "2 min",
+      "published": "2025-11-25T22:13:35",
+      "score": 8.4
+    },
+    {
+      "title": "Alibaba's AgentEvolver lifts model performance in tool use by ~30% using synthetic, auto-generated tasks",
+      "excerpt": "Researchers at Alibaba’s Tongyi Lab have developed a new framework for self-evolving agents that create their own training data by exploring their application environments. The framework, AgentEvolver , uses the...",
+      "category": "AI News",
+      "url": "https://venturebeat.com/ai/alibabas-agentevolver-lifts-model-performance-in-tool-use-by-30-using",
+      "source": "VentureBeat AI",
+      "read_time": "6 min",
+      "published": "2025-11-26T00:00:00",
+      "score": 7.9
+    },
+    {
+      "title": "Black Forest Labs launches Flux.2 AI image models to challenge Nano Banana Pro and Midjourney",
+      "excerpt": "It's not just Google's Gemini 3 , Nano Banana Pro , and Anthropic's Claude Opus 4.5 we have to be thankful for this year around the Thanksgiving holiday here in...",
+      "category": "AI News",
+      "url": "https://venturebeat.com/ai/black-forest-labs-launches-flux-2-ai-image-models-to-challenge-nano-banana",
+      "source": "VentureBeat AI",
+      "read_time": "12 min",
+      "published": "2025-11-26T03:46:00",
+      "score": 7.8
+    },
+    {
+      "title": "OpenAI now lets enterprises choose where to host their data",
+      "excerpt": "OpenAI expanded its data residency regions for ChatGPT and its API, giving enterprise users the option to store and process their data closest to their business operations and better comply...",
+      "category": "AI News",
+      "url": "https://venturebeat.com/ai/openai-now-lets-enterprises-choose-where-to-host-their-data",
+      "source": "VentureBeat AI",
+      "read_time": "2 min",
+      "published": "2025-11-25T05:00:00",
+      "score": 7.7
+    },
+    {
+      "title": "Anthropic’s Claude Opus 4.5 is here: Cheaper AI, infinite chats, and coding skills that beat humans",
+      "excerpt": "Anthropic released its most capable artificial intelligence model yet on Monday, slashing prices by roughly two-thirds while claiming state-of-the-art performance on software engineering tasks — a strategic move that intensifies...",
+      "category": "AI News",
+      "url": "https://venturebeat.com/ai/anthropics-claude-opus-4-5-is-here-cheaper-ai-infinite-chats-and-coding",
+      "source": "VentureBeat AI",
+      "read_time": "9 min",
+      "published": "2025-11-24T21:35:00",
+      "score": 7.5
+    }
+  ],
+  "video_spotlight": null,
+  "categories": [
+    {
+      "name": "AI News",
+      "slug": "ai_news",
+      "count": 6,
+      "icon": "🤖"
+    },
+    {
+      "name": "Tech",
+      "slug": "general_tech",
+      "count": 1,
+      "icon": "💻"
+    }
+  ],
+  "stats": {
+    "total_articles": 7,
+    "categories_count": 2
+  }
+}

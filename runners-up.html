@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Articles - TechPulse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .runners-up-header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .runners-up-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .runners-up-header p {
+            color: var(--color-text-light);
+            font-size: 1.1rem;
+        }
+        
+        .runners-up-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .runners-up-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--color-surface);
+            border-radius: var(--radius-sm);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-accent);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+        
+        .compact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .compact-article {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .compact-article:hover {
+            border-color: var(--color-accent);
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .compact-thumbnail {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--color-surface);
+        }
+        
+        .compact-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .compact-thumbnail-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-accent), #764ba2);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            padding: 0.5rem;
+        }
+        
+        .compact-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .compact-title {
+            font-size: 1rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .compact-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+            flex-wrap: wrap;
+        }
+        
+        .compact-category {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: var(--color-surface);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-accent);
+        }
+        
+        .compact-author {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .compact-score {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
+            flex-shrink: 0;
+        }
+        
+        .score-badge.high {
+            background: #10B981;
+            color: white;
+            border-color: #10B981;
+        }
+        
+        .score-badge.medium {
+            background: #F59E0B;
+            color: white;
+            border-color: #F59E0B;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--color-text-light);
+        }
+        
+        .no-articles {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .no-articles h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: var(--font-weight-semibold);
+            transition: all 0.2s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .back-button:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateX(-4px);
+        }
+        
+        @media (max-width: 768px) {
+            .compact-article {
+                flex-direction: column;
+            }
+            
+            .compact-thumbnail {
+                width: 100%;
+                height: 150px;
+            }
+            
+            .runners-up-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .compact-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TechPulse</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="runners-up-header">
+        <h1>More Articles</h1>
+        <p id="subtitle">Discover more curated tech and AI stories</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="runners-up-container">
+        <a href="index.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Main Feed
+        </a>
+
+        <div class="runners-up-stats" id="stats" style="display: none;">
+            <div class="stat-item">
+                <div class="stat-number" id="total-count">0</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="avg-score">0</div>
+                <div class="stat-label">Avg Score</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="categories-count">0</div>
+                <div class="stat-label">Categories</div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <p>Loading articles...</p>
+        </div>
+
+        <div id="no-articles" class="no-articles" style="display: none;">
+            <h2>No additional articles available</h2>
+            <p>Check back later for more curated content!</p>
+        </div>
+
+        <div class="compact-list" id="articles-list"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>TECHPULSE</h3>
+                    <p>Daily insights on technology, startups, and innovation. Curated for curious minds.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <a href="archive.html">Archive</a>
+                        <a href="index.html#categories">Topics</a>
+                        <a href="export_ratings.html">Export Ratings</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="LEARNING-SYSTEM.md" target="_blank">Learning System</a>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                        <a href="mailto:hello@techpulse.blog">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechPulse. Built with privacy in mind. <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load runners-up articles
+        const RunnersUpLoader = {
+            async loadArticles() {
+                try {
+                    const response = await fetch('content/latest.json');
+                    const data = await response.json();
+                    
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    if (!data.runners_up || data.runners_up.length === 0) {
+                        document.getElementById('no-articles').style.display = 'block';
+                        return;
+                    }
+                    
+                    this.renderArticles(data.runners_up);
+                    this.renderStats(data);
+                    
+                } catch (error) {
+                    console.error('Error loading runners-up articles:', error);
+                    document.getElementById('loading').innerHTML = '<p>Error loading articles. Please try again later.</p>';
+                }
+            },
+            
+            renderArticles(articles) {
+                const container = document.getElementById('articles-list');
+                container.innerHTML = '';
+                
+                articles.forEach((article, index) => {
+                    const articleEl = this.createArticleElement(article, index);
+                    container.appendChild(articleEl);
+                });
+                
+                console.log(`✓ Rendered ${articles.length} runner-up articles`);
+            },
+            
+            createArticleElement(article, index) {
+                const link = document.createElement('a');
+                link.href = article.url;
+                link.target = '_blank';
+                link.className = 'compact-article';
+                
+                const scoreClass = article.score >= 8 ? 'high' : article.score >= 7 ? 'medium' : '';
+                
+                link.innerHTML = `
+                    <div class="score-badge ${scoreClass}">${article.score}</div>
+                    <div class="compact-thumbnail">
+                        ${article.image_url 
+                            ? `<img src="${article.image_url}" alt="${article.title}" onerror="this.parentElement.innerHTML='<div class=\\'compact-thumbnail-placeholder\\'>${article.category}</div>';">` 
+                            : `<div class="compact-thumbnail-placeholder">${article.category}</div>`
+                        }
+                    </div>
+                    <div class="compact-content">
+                        <h3 class="compact-title">${article.title}</h3>
+                        <div class="compact-meta">
+                            <span class="compact-category">${article.category}</span>
+                            <span class="compact-author">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                ${article.author}
+                            </span>
+                            <span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                ${article.read_time}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                
+                return link;
+            },
+            
+            renderStats(data) {
+                const stats = data.stats;
+                
+                document.getElementById('total-count').textContent = stats.runners_up_count || 0;
+                document.getElementById('categories-count').textContent = stats.categories_count || 0;
+                
+                // Calculate average score from runners-up
+                const avgScore = data.runners_up.reduce((sum, a) => sum + a.score, 0) / data.runners_up.length;
+                document.getElementById('avg-score').textContent = avgScore.toFixed(1);
+                
+                document.getElementById('stats').style.display = 'flex';
+            }
+        };
+        
+        // Load articles when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            RunnersUpLoader.loadArticles();
+        });
+    </script>
+</body>
+</html>

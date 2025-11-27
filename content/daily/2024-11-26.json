@@ -1,0 +1,100 @@
+{
+  "date": "2024-11-26",
+  "date_display": "November 26, 2024",
+  "articles": [
+    {
+      "id": "2024-11-26-7821",
+      "title": "OpenAI Announces GPT-5 Training: Next-Generation AI Model",
+      "url": "https://openai.com/blog/gpt-5-training",
+      "source": "OpenAI Blog",
+      "category": "ai_research",
+      "published": "2024-11-26T14:30:00Z",
+      "score": 9.4,
+      "word_count": 1250
+    },
+    {
+      "id": "2024-11-26-4532",
+      "title": "Latent Space Podcast: The Future of AI Agents with Swyx",
+      "url": "https://www.latent.space/p/ai-agents-2024",
+      "source": "Latent Space",
+      "category": "ai_podcast",
+      "published": "2024-11-26T06:00:00Z",
+      "score": 9.1,
+      "word_count": 3200
+    },
+    {
+      "id": "2024-11-26-9123",
+      "title": "Anthropic's Claude 3.5 Achieves 95% on GPQA Diamond Benchmark",
+      "url": "https://www.anthropic.com/news/claude-3-5-benchmarks",
+      "source": "Anthropic Blog",
+      "category": "ai_news",
+      "published": "2024-11-26T10:15:00Z",
+      "score": 8.9,
+      "word_count": 950
+    },
+    {
+      "id": "2024-11-26-2341",
+      "title": "Google DeepMind Unveils Breakthrough in Protein Folding",
+      "url": "https://deepmind.google/research/alphafold-3",
+      "source": "Google DeepMind",
+      "category": "ai_research",
+      "published": "2024-11-26T08:00:00Z",
+      "score": 8.7,
+      "word_count": 1840
+    },
+    {
+      "id": "2024-11-26-5671",
+      "title": "YC-Backed Startup Raises $50M for AI-Powered Developer Tools",
+      "url": "https://techcrunch.com/ai-dev-tools-funding",
+      "source": "TechCrunch",
+      "category": "startups",
+      "published": "2024-11-26T09:00:00Z",
+      "score": 8.5,
+      "word_count": 780
+    },
+    {
+      "id": "2024-11-26-8934",
+      "title": "McKinsey Report: 40% of Enterprise Tasks Could Be Automated by AI",
+      "url": "https://www.mckinsey.com/ai-enterprise-automation-2024",
+      "source": "McKinsey Technology",
+      "category": "tech_strategy",
+      "published": "2024-11-25T16:00:00Z",
+      "score": 8.3,
+      "word_count": 2100
+    },
+    {
+      "id": "2024-11-26-1287",
+      "title": "Cursor AI Reaches 1M Active Developers",
+      "url": "https://cursor.com/blog/1m-developers",
+      "source": "Cursor AI",
+      "category": "general_tech",
+      "published": "2024-11-25T14:30:00Z",
+      "score": 8.1,
+      "word_count": 650
+    }
+  ],
+  "stats": {
+    "total_articles": 15,
+    "avg_score": 8.5,
+    "sources": [
+      "OpenAI Blog",
+      "Latent Space",
+      "Anthropic Blog",
+      "Google DeepMind",
+      "TechCrunch",
+      "VentureBeat",
+      "Hacker News",
+      "McKinsey Technology",
+      "Cursor AI",
+      "Every.to"
+    ],
+    "categories": [
+      "ai_research",
+      "ai_podcast",
+      "ai_news",
+      "startups",
+      "tech_strategy",
+      "general_tech"
+    ]
+  }
+}
