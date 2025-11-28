@@ -301,7 +301,12 @@ themeToggle.init();
 const ContentLoader = {
     async init() {
         try {
-            const data = await this.fetchContent();
+            const data = await this.loadLatestContent();
+            
+            if (!data) {
+                console.log('No dynamic content available, using static content');
+                return;
+            }
             
             if (data.hero) {
                 this.updateHero(data.hero);
