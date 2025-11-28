@@ -8,104 +8,80 @@ const SearchEngine = {
     searchStartTime: 0,
     
     /**
-     * Quick check if a file exists (HEAD request)
-     */
-    async fileExists(url) {
-        try {
-            const response = await fetch(url, { method: 'HEAD' });
-            return response.ok;
-        } catch {
-            return false;
-        }
-    },
-    
-    /**
      * Initialize search engine - load all articles from daily files
-     * Optimized: only loads files that exist
+     * Simplified: directly tries to load files, much faster
      */
     async init() {
         try {
             console.time('Search index load');
             const today = new Date();
-            const filesToLoad = [];
             
-            // Phase 1: Quick scan for existing files (last 14 days only for speed)
-            console.log('Scanning for existing files...');
-            const scanPromises = [];
+            // Try to load recent daily files directly (much faster than HEAD requests)
+            console.log('Loading article files...');
+            const loadPromises = [];
             
-            for (let i = 0; i < 14; i++) {
+            // Only try last 7 days with common suffixes for speed
+            for (let i = 0; i < 7; i++) {
                 const date = new Date(today);
                 date.setDate(date.getDate() - i);
                 const dateStr = date.toISOString().split('T')[0];
                 
-                // Check base file and first 2 suffixes (most common)
+                // Try base file and common suffixes
                 for (let suffix of ['', '_2', '_3']) {
                     const filename = `content/daily/${dateStr}${suffix}.json`;
-                    scanPromises.push(
-                        fetch(filename, { method: 'HEAD' })
-                            .then(res => res.ok ? filename : null)
+                    loadPromises.push(
+                        fetch(filename)
+                            .then(res => res.ok ? res.json() : null)
                             .catch(() => null)
                     );
                 }
             }
             
-            // Wait for scans with timeout
-            const foundFiles = await Promise.race([
-                Promise.all(scanPromises),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Scan timeout')), 3000))
-            ]).catch(() => []);
+            // Also try latest.json as primary source
+            loadPromises.unshift(
+                fetch('content/latest.json')
+                    .then(res => res.ok ? res.json() : null)
+                    .catch(() => null)
+            );
             
-            const existingFiles = foundFiles.filter(f => f !== null);
-            console.log(`Found ${existingFiles.length} existing files`);
+            // Load all in parallel with 5 second timeout
+            const results = await Promise.race([
+                Promise.all(loadPromises),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Loading timeout')), 5000))
+            ]);
             
-            // Phase 2: Load only existing files in parallel
-            if (existingFiles.length === 0) {
-                console.warn('No files found, trying latest.json as fallback...');
-                // Fallback: try to load from latest.json
-                try {
-                    const response = await fetch('content/latest.json');
-                    if (response.ok) {
-                        const data = await response.json();
-                        // Get all articles from latest.json
-                        const allArticles = [
-                            data.hero,
-                            ...(data.headlines || []),
-                            ...(data.runners_up || [])
-                        ].filter(a => a);
-                        
-                        allArticles.forEach(article => {
-                            this.allArticles.push({
-                                ...article,
-                                date_display: 'Recent',
-                                date: article.published?.split('T')[0] || 'unknown'
-                            });
+            let loadedFromDaily = false;
+            
+            // Process daily files first
+            results.slice(1).forEach(dailyData => {
+                if (dailyData && dailyData.articles && Array.isArray(dailyData.articles)) {
+                    loadedFromDaily = true;
+                    dailyData.articles.forEach(article => {
+                        this.allArticles.push({
+                            ...article,
+                            date_display: dailyData.date_display || 'Unknown Date',
+                            date: dailyData.date || article.published?.split('T')[0] || 'unknown'
                         });
-                    }
-                } catch (e) {
-                    console.error('Could not load fallback data:', e);
+                    });
                 }
-            } else {
-                // Load all found files in parallel
-                const loadPromises = existingFiles.map(filename =>
-                    fetch(filename)
-                        .then(res => res.json())
-                        .catch(() => null)
-                );
+            });
+            
+            // If no daily files, use latest.json
+            if (!loadedFromDaily && results[0]) {
+                console.log('Using latest.json as article source');
+                const latestData = results[0];
+                const allArticles = [
+                    latestData.hero,
+                    ...(latestData.headlines || []),
+                    ...(latestData.runners_up || [])
+                ].filter(a => a);
                 
-                const results = await Promise.all(loadPromises);
-                const dailyFiles = results.filter(data => data !== null);
-                
-                // Collect all articles
-                dailyFiles.forEach(dailyData => {
-                    if (dailyData && dailyData.articles && Array.isArray(dailyData.articles)) {
-                        dailyData.articles.forEach(article => {
-                            this.allArticles.push({
-                                ...article,
-                                date_display: dailyData.date_display || 'Unknown Date',
-                                date: dailyData.date || article.published?.split('T')[0] || 'unknown'
-                            });
-                        });
-                    }
+                allArticles.forEach(article => {
+                    this.allArticles.push({
+                        ...article,
+                        date_display: 'Recent',
+                        date: article.published?.split('T')[0] || 'unknown'
+                    });
                 });
             }
             
@@ -113,7 +89,7 @@ const SearchEngine = {
             console.log(`✓ Search index loaded: ${this.allArticles.length} articles`);
             
             if (this.allArticles.length === 0) {
-                console.warn('⚠ No articles found in archive files');
+                console.warn('⚠ No articles found');
             }
             
             return this.allArticles.length;
