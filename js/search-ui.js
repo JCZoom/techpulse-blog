@@ -156,7 +156,7 @@ const SearchUI = {
     },
     
     /**
-     * Setup keyboard shortcuts (/ to focus search)
+     * Setup keyboard shortcuts (/ to focus search, ESC to unfocus)
      */
     setupKeyboardShortcuts() {
         document.addEventListener('keydown', (e) => {
@@ -171,10 +171,15 @@ const SearchUI = {
                 searchInput.select();
             }
             
-            // ESC to close syntax helper
-            if (e.key === 'Escape' && this.syntaxHelperVisible) {
-                e.preventDefault();
-                this.hideSyntaxHelper();
+            // ESC to close syntax helper or unfocus search bar
+            if (e.key === 'Escape') {
+                if (this.syntaxHelperVisible) {
+                    e.preventDefault();
+                    this.hideSyntaxHelper();
+                } else if (document.activeElement === searchInput) {
+                    e.preventDefault();
+                    searchInput.blur(); // Unfocus the search bar
+                }
             }
         });
     },
@@ -194,8 +199,11 @@ const SearchUI = {
         
         // / key when focused - toggle syntax helper
         if (e.key === '/' && document.activeElement === input) {
-            e.preventDefault();
-            this.toggleSyntaxHelper(input);
+            // Only prevent default if not selecting text
+            if (window.getSelection().toString().length === 0) {
+                e.preventDefault();
+                this.toggleSyntaxHelper(input);
+            }
             return;
         }
         
@@ -446,19 +454,38 @@ const SearchUI = {
         const queryDisplay = document.getElementById('queryDisplay');
         if (queryDisplay) queryDisplay.textContent = decodeURIComponent(query);
         
+        // Add 10 second timeout
+        const loadingTimeout = setTimeout(() => {
+            console.error('Search timed out after 10 seconds');
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('noResults').style.display = 'block';
+            document.getElementById('noResults').innerHTML = `
+                <h2>Search timed out</h2>
+                <p>The search is taking too long. This might be a network issue.</p>
+                <p>Try:</p>
+                <ul style="text-align: left; max-width: 400px; margin: 1rem auto;">
+                    <li>Refresh the page</li>
+                    <li>Check your internet connection</li>
+                    <li>Check browser console (F12) for errors</li>
+                </ul>
+                <p><a href="index.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Go back to homepage</a></p>
+            `;
+        }, 10000); // 10 second timeout
+        
         // Initialize search engine
         try {
             console.log('Initializing search engine...');
             const articleCount = await SearchEngine.init();
+            clearTimeout(loadingTimeout); // Clear timeout on success
             console.log(`Loaded ${articleCount} articles`);
             
             if (articleCount === 0) {
                 document.getElementById('loadingState').style.display = 'none';
                 document.getElementById('noResults').style.display = 'block';
                 document.getElementById('noResults').innerHTML = `
-                    <h2>No articles in archive yet</h2>
-                    <p>Run the pipeline to generate articles, then search will work.</p>
-                    <p><a href="index.html">Go back to homepage</a></p>
+                    <h2>No articles found</h2>
+                    <p>No articles are available to search yet.</p>
+                    <p><a href="index.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Go back to homepage</a></p>
                 `;
                 return;
             }
@@ -472,13 +499,15 @@ const SearchUI = {
             this.renderResults(results);
             
         } catch (error) {
+            clearTimeout(loadingTimeout); // Clear timeout on error
             console.error('Search error:', error);
             document.getElementById('loadingState').style.display = 'none';
             document.getElementById('noResults').style.display = 'block';
             document.getElementById('noResults').innerHTML = `
                 <h2>Search error</h2>
-                <p>Unable to load search index. Error: ${error.message}</p>
-                <p><a href="index.html">Go back to homepage</a></p>
+                <p>Unable to load search index: ${error.message}</p>
+                <p>Check browser console (F12) for more details.</p>
+                <p><a href="index.html" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Go back to homepage</a></p>
             `;
         }
     },
