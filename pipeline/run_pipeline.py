@@ -143,7 +143,7 @@ class TechPulsePipeline:
         articles = filter_by_history(
             articles,
             content_dir=content_dir,
-            lookback_days=3  # Don't republish articles from last 3 days (allow re-ranking older articles)
+            lookback_days=2  # Don't republish articles from last 2 days (allow more re-ranking)
         )
         
         logger.info(f"✓ {len(articles)} articles after history filter")
