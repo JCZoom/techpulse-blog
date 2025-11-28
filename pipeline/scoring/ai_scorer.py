@@ -330,14 +330,13 @@ class AIScorer:
                 article['ai_category'] = "General"
                 scored_articles.append(article)
         
-        # Sort by score (highest first)
-        scored_articles.sort(key=lambda x: x.get('ai_score', 0), reverse=True)
+        # Don't sort here - maintain original order to preserve article-image mapping
+        # Articles will be sorted by score in the JSON generator
         
         logger.info(f"✓ Scored articles: {len(scored_articles)} total")
         if scored_articles:
-            logger.info(f"  Top score: {scored_articles[0].get('ai_score', 0)}")
-            logger.info(f"  Top article: {scored_articles[0].get('title', 'Unknown')[:60]}")
-            logger.info(f"  Top category: {scored_articles[0].get('ai_category', 'Unknown')}")
+            scores = [a.get('ai_score', 0) for a in scored_articles]
+            logger.info(f"  Score range: {min(scores):.1f} - {max(scores):.1f} (avg: {sum(scores)/len(scores):.1f})")
         
         return scored_articles
 

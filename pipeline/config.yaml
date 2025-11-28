@@ -3,7 +3,7 @@
 pipeline:
   max_articles_per_day: 50    # Increased to get more runners-up
   lookback_hours: 168         # Look back 7 days for more articles (previously published will be filtered)
-  min_word_count: 25          # Very low threshold to capture more articles (even short ones)
+  min_word_count: 15          # RSS feeds provide summaries (15-500 words), not full articles
   
 output:
   content_dir: "../content"  # Website's content directory

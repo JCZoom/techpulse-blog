@@ -182,12 +182,11 @@ class TechPulsePipeline:
                 scored_dicts = scorer.score_articles(article_dicts)
                 
                 # Update article objects with AI scores and categories
+                # Note: image_url already set during enrichment phase, don't overwrite
                 for article, scored_dict in zip(articles, scored_dicts):
                     article.score = scored_dict.get('ai_score', 5.0)
                     if scored_dict.get('ai_category'):
                         article.category = scored_dict['ai_category']
-                    if scored_dict.get('image_url'):
-                        article.image_url = scored_dict['image_url']
                 
             except Exception as e:
                 logger.error(f"AI scoring failed: {e}")
@@ -258,7 +257,7 @@ class TechPulsePipeline:
         
         logger.info(f"✓ Generated content files:")
         logger.info(f"  - {output_dir}/latest.json")
-        logger.info(f"  - {output_dir}/daily/{datetime.now().strftime('%Y-%m-%d')}.json")
+        # Note: actual daily filename logged by generator (may have _2, _3 suffix)
         
         return latest_content, daily_content
 

@@ -40,23 +40,25 @@ class HistoryFilter:
             logger.warning(f"Daily directory not found: {self.daily_dir}")
             return published_urls
         
-        # Special case: If running multiple times today, only check today's file
-        # This allows re-ranking throughout the day
-        today = datetime.now().strftime("%Y-%m-%d")
-        today_file = self.daily_dir / f"{today}.json"
-        
-        if today_file.exists():
-            logger.info(f"Checking only today's published articles: {today}")
-            cutoff_date = datetime.now() - timedelta(days=1)  # Only check last 24 hours
-        else:
-            logger.info(f"No file for today yet, checking last {self.lookback_days} days")
-            cutoff_date = datetime.now() - timedelta(days=self.lookback_days)
+        # Always exclude today's runs to allow multiple runs per day
+        logger.info(f"Checking history (excluding today) from last {self.lookback_days} days")
+        cutoff_date = datetime.now() - timedelta(days=self.lookback_days)
         
         for daily_file in self.daily_dir.glob("*.json"):
             try:
-                # Parse date from filename (e.g., "2025-11-28.json")
-                date_str = daily_file.stem  # Gets "2025-11-28"
+                # Parse date from filename (e.g., "2025-11-28.json" or "2025-11-28_2.json")
+                date_str = daily_file.stem  # Gets "2025-11-28" or "2025-11-28_2"
+                
+                # Remove suffix if present (_2, _3, etc.)
+                if '_' in date_str:
+                    date_str = date_str.split('_')[0]
+                
                 file_date = datetime.strptime(date_str, "%Y-%m-%d")
+                
+                # Skip today's files to allow multiple runs per day
+                if file_date.date() == datetime.now().date():
+                    logger.debug(f"Skipping today's file: {daily_file.name}")
+                    continue
                 
                 # Skip if too old
                 if file_date < cutoff_date:

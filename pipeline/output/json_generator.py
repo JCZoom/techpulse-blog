@@ -86,6 +86,36 @@ class ContentGenerator:
         
         return content
     
+    def _find_available_filename(self, base_path: Path) -> Path:
+        """
+        Find an available filename by adding suffix (_2, _3, etc.) if needed
+        
+        Args:
+            base_path: Base file path (e.g., content/daily/2025-11-28.json)
+            
+        Returns:
+            Available file path (may have suffix)
+        """
+        if not base_path.exists():
+            return base_path
+        
+        # File exists, try adding suffixes
+        base_dir = base_path.parent
+        base_name = base_path.stem  # e.g., "2025-11-28"
+        extension = base_path.suffix  # e.g., ".json"
+        
+        counter = 2
+        while True:
+            new_path = base_dir / f"{base_name}_{counter}{extension}"
+            if not new_path.exists():
+                logger.info(f"File {base_path.name} exists, using {new_path.name} instead")
+                return new_path
+            counter += 1
+            
+            # Safety limit
+            if counter > 100:
+                raise ValueError(f"Too many runs for {base_name} (> 100)")
+    
     def generate_daily_archive(self, articles: List, date: datetime = None) -> Dict:
         """
         Generate daily archive file (content/daily/YYYY-MM-DD.json)
@@ -115,12 +145,14 @@ class ContentGenerator:
             }
         }
         
-        # Write to file
-        output_file = self.output_dir / "daily" / f"{date_key}.json"
+        # Write to file (with suffix if multiple runs today)
+        base_output_file = self.output_dir / "daily" / f"{date_key}.json"
+        output_file = self._find_available_filename(base_output_file)
+        
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(archive_data, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"✓ Generated daily archive: {output_file}")
+        logger.info(f"✓ Generated daily archive: {output_file.name}")
         
         return archive_data
     
@@ -177,7 +209,8 @@ class ContentGenerator:
             "category": article.category,
             "published": article.published.isoformat() if article.published else None,
             "score": round(article.score, 1) if article.score else 8.0,
-            "word_count": len(article.content.split()) if article.content else 0
+            "word_count": len(article.content.split()) if article.content else 0,
+            "image_url": getattr(article, 'image_url', None)
         }
     
     def _find_video_content(self, articles: List) -> Dict:

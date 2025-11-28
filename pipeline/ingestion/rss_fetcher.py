@@ -189,7 +189,13 @@ class RSSFetcher:
         return datetime.now()
     
     def _extract_content(self, entry) -> str:
-        """Extract content from various feed content fields"""
+        """
+        Extract content from various feed content fields
+        
+        NOTE: RSS/Atom feeds typically provide summaries or excerpts (15-500 words),
+        not full article content. To get full articles, you'd need to fetch and 
+        scrape each article URL separately (not implemented here for reliability/speed).
+        """
         
         # Try content field (Atom)
         if hasattr(entry, 'content') and entry.content:
