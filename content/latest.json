@@ -1,5 +1,5 @@
- {
-  "generated_at": "2025-11-28T09:20:15.772055",
+{
+  "generated_at": "2025-11-28T09:40:08.234214",
   "date": "November 28, 2025",
   "hero": {
     "title": "A weekend ‘vibe code’ hack by Andrej Karpathy quietly sketches the missing layer of enterprise AI orchestration",
@@ -34,7 +34,7 @@
       "read_time": "6 min",
       "published": "2025-11-26T00:00:00",
       "score": 7.6,
-      "image_url": "https://opengraph.githubassets.com/7ef3276654f8beac1a2b06ce4841d0f7b39c026c82b84887d9f4a2bc5e37b215/NullPxl/banrays"
+      "image_url": "https://opengraph.githubassets.com/90e0ba3b19d0002cdb3564b38885ffaf571df08ff2d48ea9a6d384658c452e7d/NullPxl/banrays"
     },
     {
       "title": "What enterprises should know about The White House's new AI 'Manhattan Project' the Genesis Mission",
@@ -57,17 +57,6 @@
       "published": "2025-11-26T20:26:36",
       "score": 7.4,
       "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5m2x1YdAEaqWJLhiH1Oh3S/cf8162a0477a1a70dbebd393e0ce2a3d/0hw9lFQJS_Zy6yiTAktWc.png?w=300&q=30"
-    },
-    {
-      "title": "SQL Still Wins: Why It's Not Going Anywhere",
-      "excerpt": "Every year there’s a new framework, a new “no-code” tool, or a new data platform that promises to replace SQL. And yet—SQL remains the most universal, reliable, and widely adopted...",
-      "category": "Enterprise Ai Adoption For Saas",
-      "url": "https://news.ycombinator.com/item?id=46078040",
-      "source": "Hacker News",
-      "read_time": "1 min",
-      "published": "2025-11-28T12:26:31",
-      "score": 7.4,
-      "image_url": null
     },
     {
       "title": "Show HN: Glasses to detect smart-glasses that have cameras",
@@ -107,17 +96,11 @@
       "slug": "Enterprise AI Strategy & Roadmap",
       "count": 1,
       "icon": "📄"
-    },
-    {
-      "name": "Enterprise Ai Adoption For Saas",
-      "slug": "Enterprise AI Adoption for SaaS",
-      "count": 1,
-      "icon": "📄"
     }
   ],
   "stats": {
-    "total_articles": 7,
-    "categories_count": 5,
+    "total_articles": 6,
+    "categories_count": 4,
     "runners_up_count": 0
   }
 }
