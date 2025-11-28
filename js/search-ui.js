@@ -443,21 +443,43 @@ const SearchUI = {
         if (searchInput) searchInput.value = decodeURIComponent(query);
         
         // Display query
-        document.getElementById('queryDisplay').textContent = decodeURIComponent(query);
+        const queryDisplay = document.getElementById('queryDisplay');
+        if (queryDisplay) queryDisplay.textContent = decodeURIComponent(query);
         
         // Initialize search engine
         try {
-            await SearchEngine.init();
+            console.log('Initializing search engine...');
+            const articleCount = await SearchEngine.init();
+            console.log(`Loaded ${articleCount} articles`);
+            
+            if (articleCount === 0) {
+                document.getElementById('loadingState').style.display = 'none';
+                document.getElementById('noResults').style.display = 'block';
+                document.getElementById('noResults').innerHTML = `
+                    <h2>No articles in archive yet</h2>
+                    <p>Run the pipeline to generate articles, then search will work.</p>
+                    <p><a href="index.html">Go back to homepage</a></p>
+                `;
+                return;
+            }
             
             // Perform search
+            console.log('Executing search...');
             const results = SearchEngine.search(query, sort);
+            console.log(`Found ${results.count} results`);
             
             // Render results
             this.renderResults(results);
             
         } catch (error) {
             console.error('Search error:', error);
-            document.getElementById('loadingState').innerHTML = '<p>Error loading search. Please try again.</p>';
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('noResults').style.display = 'block';
+            document.getElementById('noResults').innerHTML = `
+                <h2>Search error</h2>
+                <p>Unable to load search index. Error: ${error.message}</p>
+                <p><a href="index.html">Go back to homepage</a></p>
+            `;
         }
     },
     

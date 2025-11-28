@@ -11,44 +11,61 @@ const SearchEngine = {
      * Initialize search engine - load all articles from daily files
      */
     async init() {
-        const today = new Date();
-        const promises = [];
-        
-        // Load last 60 days of daily files
-        for (let i = 0; i < 60; i++) {
-            const date = new Date(today);
-            date.setDate(date.getDate() - i);
-            const dateStr = date.toISOString().split('T')[0];
+        try {
+            const today = new Date();
+            const promises = [];
             
-            // Try base file and suffixed versions
-            for (let suffix of ['', '_2', '_3', '_4', '_5']) {
-                const filename = `content/daily/${dateStr}${suffix}.json`;
-                promises.push(
-                    fetch(filename)
-                        .then(res => res.ok ? res.json() : null)
-                        .catch(() => null)
-                );
+            // Load last 30 days of daily files (reduced for faster loading)
+            for (let i = 0; i < 30; i++) {
+                const date = new Date(today);
+                date.setDate(date.getDate() - i);
+                const dateStr = date.toISOString().split('T')[0];
+                
+                // Try base file and suffixed versions
+                for (let suffix of ['', '_2', '_3', '_4', '_5']) {
+                    const filename = `content/daily/${dateStr}${suffix}.json`;
+                    promises.push(
+                        Promise.race([
+                            fetch(filename)
+                                .then(res => res.ok ? res.json() : null)
+                                .catch(() => null),
+                            new Promise(resolve => setTimeout(() => resolve(null), 2000)) // 2s timeout per file
+                        ])
+                    );
+                }
             }
-        }
-        
-        const results = await Promise.all(promises);
-        const dailyFiles = results.filter(data => data !== null);
-        
-        // Collect all articles
-        dailyFiles.forEach(dailyData => {
-            if (dailyData.articles) {
-                dailyData.articles.forEach(article => {
-                    this.allArticles.push({
-                        ...article,
-                        date_display: dailyData.date_display,
-                        date: dailyData.date
+            
+            const results = await Promise.race([
+                Promise.all(promises),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout loading files')), 15000)) // 15s total timeout
+            ]);
+            
+            const dailyFiles = results.filter(data => data !== null);
+            
+            // Collect all articles
+            dailyFiles.forEach(dailyData => {
+                if (dailyData && dailyData.articles && Array.isArray(dailyData.articles)) {
+                    dailyData.articles.forEach(article => {
+                        this.allArticles.push({
+                            ...article,
+                            date_display: dailyData.date_display || 'Unknown Date',
+                            date: dailyData.date || article.published?.split('T')[0] || 'unknown'
+                        });
                     });
-                });
+                }
+            });
+            
+            console.log(`✓ Search index loaded: ${this.allArticles.length} articles from ${dailyFiles.length} files`);
+            
+            if (this.allArticles.length === 0) {
+                console.warn('⚠ No articles found in archive files');
             }
-        });
-        
-        console.log(`✓ Search index loaded: ${this.allArticles.length} articles from ${dailyFiles.length} files`);
-        return this.allArticles.length;
+            
+            return this.allArticles.length;
+        } catch (error) {
+            console.error('Error loading search index:', error);
+            throw error;
+        }
     },
     
     /**
