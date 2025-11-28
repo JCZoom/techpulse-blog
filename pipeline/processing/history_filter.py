@@ -40,8 +40,17 @@ class HistoryFilter:
             logger.warning(f"Daily directory not found: {self.daily_dir}")
             return published_urls
         
-        # Get recent daily files
-        cutoff_date = datetime.now() - timedelta(days=self.lookback_days)
+        # Special case: If running multiple times today, only check today's file
+        # This allows re-ranking throughout the day
+        today = datetime.now().strftime("%Y-%m-%d")
+        today_file = self.daily_dir / f"{today}.json"
+        
+        if today_file.exists():
+            logger.info(f"Checking only today's published articles: {today}")
+            cutoff_date = datetime.now() - timedelta(days=1)  # Only check last 24 hours
+        else:
+            logger.info(f"No file for today yet, checking last {self.lookback_days} days")
+            cutoff_date = datetime.now() - timedelta(days=self.lookback_days)
         
         for daily_file in self.daily_dir.glob("*.json"):
             try:
