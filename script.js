@@ -376,6 +376,7 @@ const ContentLoader = {
         const categoryTag = document.querySelector('.category-tag');
         const readTime = document.querySelector('.read-time');
         const heroLink = document.querySelector('.hero-actions .btn-primary');
+        const heroAuthor = document.querySelector('.hero-meta .author');
         
         if (heroTitle) {
             // Check if there's a gradient-text span
@@ -396,7 +397,50 @@ const ContentLoader = {
         if (heroSubtitle) heroSubtitle.textContent = hero.subtitle;
         if (categoryTag) categoryTag.textContent = hero.category;
         if (readTime) readTime.textContent = hero.read_time;
-        if (heroLink) heroLink.href = hero.url;
+        if (heroAuthor) {
+            // Clean up author format: extract name from "email (Name)" format
+            let authorText = hero.author || hero.source;
+            const match = authorText.match(/\(([^)]+)\)/);
+            if (match) {
+                authorText = match[1]; // Extract just the name from parentheses
+            }
+            heroAuthor.textContent = authorText;
+        }
+        
+        if (heroLink) {
+            heroLink.href = hero.url;
+            heroLink.target = '_blank';  // Open in new tab
+            heroLink.textContent = 'Read Article';
+            heroLink.style.pointerEvents = 'auto';
+            heroLink.style.opacity = '1';
+        }
+    },
+    
+    cleanAuthorName(author) {
+        // Extract name from "email (Name)" format
+        const match = author.match(/\(([^)]+)\)/);
+        return match ? match[1] : author;
+    },
+    
+    getSourceUrl(source) {
+        // Map source names to their main website URLs
+        const sourceUrls = {
+            'VentureBeat AI': 'https://venturebeat.com/category/ai/',
+            'TechCrunch AI': 'https://techcrunch.com/category/artificial-intelligence/',
+            'Hacker News': 'https://news.ycombinator.com',
+            'Latent Space': 'https://www.latent.space',
+            'OpenAI Blog': 'https://openai.com/blog',
+            'Anthropic Blog': 'https://www.anthropic.com/news',
+            'Every.to': 'https://every.to',
+            'The Rundown AI': 'https://www.therundown.ai',
+            'Superhuman AI': 'https://www.superhuman.ai',
+            'McKinsey Technology': 'https://www.mckinsey.com/capabilities/mckinsey-digital',
+            'Axios': 'https://www.axios.com/technology',
+            'AI News': 'https://www.artificialintelligence-news.com',
+            'Business Insider AI': 'https://www.businessinsider.com/sai'
+        };
+        
+        return sourceUrls[source] || '#';
     },
     
     updateHeadlines(headlines) {
@@ -434,7 +478,7 @@ const ContentLoader = {
                         ${article.excerpt}
                     </p>
                     <div class="article-footer">
-                        <span class="author-small">${article.source}</span>
+                        <span class="author-small"><a href="${this.getSourceUrl(article.source)}" target="_blank" style="color: inherit; text-decoration: none;">${article.source}</a></span>
                         <span class="read-time-small">${article.read_time}</span>
                     </div>
                     <div class="article-rating" data-url="${article.url}" data-category="${article.category}" data-score="${article.score}">

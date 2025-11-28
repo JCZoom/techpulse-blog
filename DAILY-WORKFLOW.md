@@ -52,18 +52,21 @@ If anything looks off, you can re-run the pipeline or manually edit `latest.json
 
 ---
 
-### Step 3: Push to GitHub
+### Step 3: Push to GitHub (Do This FIRST!)
 ```bash
 cd /Users/Jeffrey.Coy/Desktop/Website
-git add content/
-git commit -m "Daily update: $(date +%Y-%m-%d) - X articles"
+git add content/ pipeline/
+git commit -m "Daily update: $(date +%Y-%m-%d)"
 git push origin main
 ```
 
 **What this does:**
-- Commits new `latest.json` to GitHub
-- Cloudflare Pages auto-detects the push
-- Triggers automatic rebuild (30-60 seconds)
+- Commits new `latest.json` and daily archive to GitHub
+- Keeps your git history clean
+- Prevents "uncommitted changes" warning in wrangler
+- Cloudflare Pages auto-detects the push (but we'll use wrangler for speed)
+
+**⚠️ Important:** Always commit BEFORE deploying with wrangler to avoid warnings!
 
 ---
 
@@ -73,16 +76,21 @@ cd /Users/Jeffrey.Coy/Desktop/Website
 wrangler pages deploy . --project-name=techpulse-blog --branch=main
 ```
 
-**Why use Wrangler?**
+**Why use Wrangler after committing?**
 - ⚡ **Instant deployment** (30 seconds vs 2-5 minutes)
-- 🎯 **Deploys from local** (no Git wait time)
+- 🎯 **Deploys immediately** (no Git push wait time)
 - ✅ **Guaranteed fresh content** (no cache issues)
+- 🧹 **Clean git history** (no uncommitted changes warning)
 
 **Expected output:**
 ```
 ✨ Success! Uploaded X files
 ✨ Deployment complete! Take a peek over at https://XXXXXX.techpulse-blog.pages.dev
 ```
+
+**If you see "uncommitted changes" warning:**
+- This means you forgot Step 3 (git commit)
+- Deployment still works, but go back and commit first for best practice
 
 ---
 
@@ -114,20 +122,22 @@ open https://jeffcoy.net
 # 1. Generate content
 cd /Users/Jeffrey.Coy/Desktop/Website/pipeline && python3 run_pipeline.py
 
-# 2. Commit & push
+# 2. Commit & push (DO THIS FIRST!)
 cd /Users/Jeffrey.Coy/Desktop/Website && \
-git add content/ && \
+git add content/ pipeline/ && \
 git commit -m "Daily update: $(date +%Y-%m-%d)" && \
 git push origin main
 
-# 3. Deploy
+# 3. Deploy with wrangler (fast!)
 wrangler pages deploy . --project-name=techpulse-blog --branch=main
 
 # 4. Open site
 sleep 30 && open https://jeffcoy.net
 ```
 
-**Total time:** ~5 minutes (2 min pipeline + 3 min deploy & verify)
+**Total time:** ~5 minutes (2 min pipeline + 1 min commit + 2 min deploy & verify)
+
+**✅ Pro tip:** Always commit BEFORE deploying to avoid "uncommitted changes" warning!
 
 ---
 
@@ -232,6 +242,47 @@ wrangler login
 # Check project name in Cloudflare dashboard
 wrangler pages deploy . --project-name=YOUR-ACTUAL-PROJECT-NAME --branch=main
 ```
+
+---
+
+### Issue: Wrangler shows "update available" warning
+**Example:** `wrangler 4.44.0 (update available 4.51.0)`
+
+**Solution:**
+```bash
+# Update to latest version
+npm update -g wrangler
+
+# Or explicitly install latest
+npm install -g wrangler@latest
+
+# Verify version
+wrangler --version
+```
+
+---
+
+### Issue: "Working directory has uncommitted changes" warning
+**Example:** `Warning: Your working directory is a git repo and has uncommitted changes`
+
+**This is not critical** - deployment still works! But it means you forgot to commit first.
+
+**Best practice:**
+```bash
+# Always commit BEFORE deploying
+git add content/ pipeline/
+git commit -m "Daily update: $(date +%Y-%m-%d)"
+git push origin main
+
+# THEN deploy
+wrangler pages deploy . --project-name=techpulse-blog --branch=main
+```
+
+**To silence the warning without committing:**
+```bash
+wrangler pages deploy . --project-name=techpulse-blog --branch=main --commit-dirty=true
+```
+*Note: Not recommended - keep git history clean!*
 
 ---
 
@@ -381,11 +432,13 @@ grep "Top score:" pipeline/pipeline.log
 Morning Publishing Checklist:
 - [ ] Run pipeline: `python3 run_pipeline.py`
 - [ ] Review `latest.json` (optional)
-- [ ] Commit: `git add content/ && git commit && git push`
-- [ ] Deploy: `wrangler pages deploy .`
+- [ ] ✅ COMMIT FIRST: `git add content/ pipeline/ && git commit -m "Daily update" && git push`
+- [ ] Deploy: `wrangler pages deploy . --project-name=techpulse-blog --branch=main`
 - [ ] Verify: Open jeffcoy.net and check date
 - [ ] Test: Click hero, headlines, ratings
 - [ ] (Optional) Rate a few articles for learning
+
+⚠️ Always commit (step 3) BEFORE deploying (step 4) to avoid warnings!
 ```
 
 ---

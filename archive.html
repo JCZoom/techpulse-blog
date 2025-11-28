@@ -16,6 +16,27 @@
         <div class="container">
             <div class="nav-content">
                 <a href="index.html" class="logo">TECHPULSE</a>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" 
+                               id="mainSearchInput" 
+                               class="search-input" 
+                               placeholder="Search articles... (press / to focus)"
+                               autocomplete="off">
+                        <kbd class="search-kbd">/</kbd>
+                    </div>
+                    <!-- Syntax Helper Dropdown -->
+                    <div id="syntaxHelper" class="syntax-helper" style="display: none;">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+                
                 <div class="nav-links">
                     <a href="index.html#latest">Latest</a>
                     <a href="archive.html">Archive</a>
@@ -54,14 +75,8 @@
     <!-- Filter Options -->
     <section class="section" style="padding-top: var(--spacing-md);">
         <div class="container">
-            <div style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; margin-bottom: var(--spacing-lg);">
-                <button class="btn-primary" style="padding: 10px 20px;">All</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">AI</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">Startups</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">Hardware</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">Culture</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">Security</button>
-                <button class="btn-secondary" style="padding: 10px 20px;">Climate</button>
+            <div id="category-filters" style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; margin-bottom: var(--spacing-lg);">
+                <!-- Dynamically populated from categories -->
             </div>
         </div>
     </section>
@@ -69,217 +84,11 @@
     <!-- Articles Archive -->
     <section class="section">
         <div class="container">
-            <!-- November 2024 -->
-            <div style="margin-bottom: var(--spacing-xl);">
-                <h2 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-text-light);">
-                    November 2024
-                </h2>
-                <div class="articles-grid">
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                                <span>Featured</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">AI & Robotics</span>
-                                <span class="time">Nov 25</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">The Dawn of Humanoid Robots</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                As companies like 1X Technologies unveil NEO, we're witnessing a pivotal moment in robotics.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Alex Rivera</span>
-                                <span class="read-time-small">8 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);">
-                                <span>Analysis</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Startups</span>
-                                <span class="time">Nov 24</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">Silicon Valley's Quiet Revolution: How Small Teams Are Outpacing Giants</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                A new wave of lean startups is proving that size doesn't matter in the age of AI.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Sarah Chen</span>
-                                <span class="read-time-small">6 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #0EA5E9 0%, #14B8A6 100%);">
-                                <span>Deep Dive</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Hardware</span>
-                                <span class="time">Nov 22</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">Inside the Lab: Building the Next Generation of Chips</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                An exclusive look at how semiconductor companies are pushing past Moore's Law.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Marcus Kim</span>
-                                <span class="read-time-small">12 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);">
-                                <span>Opinion</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Culture</span>
-                                <span class="time">Nov 20</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">Why Remote Work Won: A Post-Mortem on Office Culture</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                Three years into the great remote experiment, the data is clear.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Jordan Lee</span>
-                                <span class="read-time-small">10 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #6366F1 0%, #06B6D4 100%);">
-                                <span>Interview</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">AI</span>
-                                <span class="time">Nov 18</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">The Real Cost of AI: Energy, Ethics, and Everything Between</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                We need to talk about AI's environmental footprint and societal impact.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Dr. Priya Sharma</span>
-                                <span class="read-time-small">15 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #0EA5E9 0%, #2563EB 100%);">
-                                <span>News</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Security</span>
-                                <span class="time">Nov 15</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">Breaking Down the Latest Cybersecurity Breach: What We Learned</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                A detailed analysis of the recent attack and its implications for the industry.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Emily Zhang</span>
-                                <span class="read-time-small">7 min</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <div id="loading-archive" style="text-align: center; padding: var(--spacing-xl);">
+                <p>Loading archive...</p>
             </div>
-
-            <!-- October 2024 -->
-            <div style="margin-bottom: var(--spacing-xl);">
-                <h2 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-text-light);">
-                    October 2024
-                </h2>
-                <div class="articles-grid">
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #06B6D4 0%, #10B981 100%);">
-                                <span>Feature</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Climate Tech</span>
-                                <span class="time">Oct 28</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">Carbon Capture at Scale: The Startups Making It Real</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                How new technologies are turning carbon removal from pipe dream to reality.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Rachel Green</span>
-                                <span class="read-time-small">11 min</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card">
-                        <div class="article-image">
-                            <div class="image-placeholder" style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);">
-                                <span>Analysis</span>
-                            </div>
-                        </div>
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <span class="category">Startups</span>
-                                <span class="time">Oct 25</span>
-                            </div>
-                            <h3 class="article-title">
-                                <a href="article.html">The New Funding Winter: How Startups Are Adapting</a>
-                            </h3>
-                            <p class="article-excerpt">
-                                VCs are more cautious than ever. Here's how founders are navigating the new reality.
-                            </p>
-                            <div class="article-footer">
-                                <span class="author-small">Tom Anderson</span>
-                                <span class="read-time-small">9 min</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Load More -->
-            <div class="load-more">
-                <button class="btn-secondary btn-large">Load More Articles</button>
+            <div id="archive-content" style="display: none;">
+                <!-- Articles dynamically loaded by date -->
             </div>
         </div>
     </section>
@@ -320,5 +129,255 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="js/search-engine.js"></script>
+    <script src="js/search-ui.js"></script>
+    <script>
+        // Archive Page Loader
+        const ArchiveLoader = {
+            allArticles: [],
+            allCategories: new Set(),
+            currentFilter: 'all',
+            
+            async init() {
+                try {
+                    await this.loadAllDailyFiles();
+                    this.extractCategories();
+                    this.renderFilters();
+                    this.renderArticles();
+                    
+                    document.getElementById('loading-archive').style.display = 'none';
+                    document.getElementById('archive-content').style.display = 'block';
+                } catch (error) {
+                    console.error('Error loading archive:', error);
+                    document.getElementById('loading-archive').innerHTML = '<p>Error loading archive. Please try again later.</p>';
+                }
+            },
+            
+            async loadAllDailyFiles() {
+                // Get list of daily JSON files by trying to load them
+                // We'll try the last 60 days
+                const today = new Date();
+                const promises = [];
+                
+                for (let i = 0; i < 60; i++) {
+                    const date = new Date(today);
+                    date.setDate(date.getDate() - i);
+                    const dateStr = date.toISOString().split('T')[0];
+                    
+                    // Try base file and suffixed versions (_2, _3)
+                    for (let suffix of ['', '_2', '_3', '_4', '_5']) {
+                        const filename = `content/daily/${dateStr}${suffix}.json`;
+                        promises.push(
+                            fetch(filename)
+                                .then(res => res.ok ? res.json() : null)
+                                .catch(() => null)
+                        );
+                    }
+                }
+                
+                const results = await Promise.all(promises);
+                const dailyFiles = results.filter(data => data !== null);
+                
+                // Collect all articles
+                dailyFiles.forEach(dailyData => {
+                    if (dailyData.articles) {
+                        dailyData.articles.forEach(article => {
+                            this.allArticles.push({
+                                ...article,
+                                date_display: dailyData.date_display,
+                                date: dailyData.date
+                            });
+                        });
+                    }
+                });
+                
+                // Sort by date descending (newest first)
+                this.allArticles.sort((a, b) => new Date(b.published) - new Date(a.published));
+                
+                console.log(`✓ Loaded ${this.allArticles.length} articles from ${dailyFiles.length} daily files`);
+            },
+            
+            extractCategories() {
+                this.allArticles.forEach(article => {
+                    if (article.category) {
+                        this.allCategories.add(article.category);
+                    }
+                });
+            },
+            
+            renderFilters() {
+                const filterContainer = document.getElementById('category-filters');
+                
+                // Add "All" button
+                const allBtn = document.createElement('button');
+                allBtn.className = 'btn-primary';
+                allBtn.style.padding = '10px 20px';
+                allBtn.textContent = 'All';
+                allBtn.onclick = () => this.filterByCategory('all');
+                filterContainer.appendChild(allBtn);
+                
+                // Add category buttons
+                const sortedCategories = Array.from(this.allCategories).sort();
+                sortedCategories.forEach(category => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn-secondary';
+                    btn.style.padding = '10px 20px';
+                    btn.textContent = this.shortenCategoryName(category);
+                    btn.onclick = () => this.filterByCategory(category);
+                    btn.dataset.category = category;
+                    filterContainer.appendChild(btn);
+                });
+            },
+            
+            shortenCategoryName(category) {
+                // Shorten long category names for buttons
+                const mapping = {
+                    'Enterprise AI Adoption for SaaS': 'Enterprise AI',
+                    'Building AI Division & Center of Excellence': 'AI CoE',
+                    'Enterprise AI Strategy & Roadmap': 'AI Strategy',
+                    'New Model Releases & Evals': 'Model Releases',
+                    'AI Privacy & Surveillance': 'Privacy',
+                    'Enterprise Ai Adoption For Saas': 'Enterprise AI',
+                    'Building Ai Division & Center Of Excellence': 'AI CoE',
+                    'Enterprise Ai Strategy & Roadmap': 'AI Strategy'
+                };
+                return mapping[category] || category;
+            },
+            
+            filterByCategory(category) {
+                this.currentFilter = category;
+                
+                // Update button states
+                document.querySelectorAll('#category-filters button').forEach(btn => {
+                    if (category === 'all' && btn.textContent === 'All') {
+                        btn.className = 'btn-primary';
+                    } else if (btn.dataset.category === category) {
+                        btn.className = 'btn-primary';
+                    } else {
+                        btn.className = 'btn-secondary';
+                    }
+                });
+                
+                this.renderArticles();
+            },
+            
+            renderArticles() {
+                const container = document.getElementById('archive-content');
+                container.innerHTML = '';
+                
+                // Filter articles
+                const filteredArticles = this.currentFilter === 'all' 
+                    ? this.allArticles 
+                    : this.allArticles.filter(a => a.category === this.currentFilter);
+                
+                if (filteredArticles.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; padding: var(--spacing-xl);">No articles found for this category.</p>';
+                    return;
+                }
+                
+                // Group by date
+                const grouped = {};
+                filteredArticles.forEach(article => {
+                    if (!grouped[article.date_display]) {
+                        grouped[article.date_display] = [];
+                    }
+                    grouped[article.date_display].push(article);
+                });
+                
+                // Render each date group
+                Object.keys(grouped).sort((a, b) => {
+                    // Sort by actual date, not display string
+                    const dateA = grouped[a][0].date;
+                    const dateB = grouped[b][0].date;
+                    return dateB.localeCompare(dateA);
+                }).forEach(dateDisplay => {
+                    const articles = grouped[dateDisplay];
+                    
+                    const dateSection = document.createElement('div');
+                    dateSection.style.marginBottom = 'var(--spacing-xl)';
+                    
+                    const dateHeader = document.createElement('h2');
+                    dateHeader.style.fontSize = '1.5rem';
+                    dateHeader.style.marginBottom = 'var(--spacing-md)';
+                    dateHeader.style.color = 'var(--color-text-light)';
+                    dateHeader.textContent = dateDisplay;
+                    dateSection.appendChild(dateHeader);
+                    
+                    const grid = document.createElement('div');
+                    grid.className = 'articles-grid';
+                    
+                    articles.forEach((article, index) => {
+                        grid.appendChild(this.createArticleCard(article, index));
+                    });
+                    
+                    dateSection.appendChild(grid);
+                    container.appendChild(dateSection);
+                });
+                
+                console.log(`✓ Rendered ${filteredArticles.length} articles`);
+            },
+            
+            createArticleCard(article, index) {
+                const card = document.createElement('article');
+                card.className = 'article-card';
+                
+                const colors = [
+                    '#667eea 0%, #764ba2 100%',
+                    '#4F46E5 0%, #06B6D4 100%',
+                    '#0EA5E9 0%, #14B8A6 100%',
+                    '#3B82F6 0%, #8B5CF6 100%',
+                    '#6366F1 0%, #06B6D4 100%',
+                    '#0EA5E9 0%, #2563EB 100%'
+                ];
+                const gradient = colors[index % colors.length];
+                
+                const publishedDate = new Date(article.published);
+                const timeAgo = ContentLoader.getTimeAgo(article.published);
+                const readTime = this.estimateReadTime(article.word_count);
+                
+                // Get source URL
+                const sourceUrl = ContentLoader.getSourceUrl(article.source);
+                
+                card.innerHTML = `
+                    <div class="article-image">
+                        ${article.image_url 
+                            ? `<img src="${article.image_url}" alt="${article.title}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\' style=\\'background: linear-gradient(135deg, ${gradient});\\' ><span>${article.category}</span></div>';">`
+                            : `<div class="image-placeholder" style="background: linear-gradient(135deg, ${gradient});"><span>${article.category}</span></div>`
+                        }
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="category">${article.category}</span>
+                            <span class="time">${timeAgo}</span>
+                        </div>
+                        <h3 class="article-title">
+                            <a href="${article.url}" target="_blank">${article.title}</a>
+                        </h3>
+                        <div class="article-footer">
+                            <span class="author-small">
+                                <a href="${sourceUrl}" target="_blank" style="color: inherit; text-decoration: none;">${article.source}</a>
+                            </span>
+                            <span class="read-time-small">${readTime} • Score: ${article.score}</span>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            },
+            
+            estimateReadTime(wordCount) {
+                if (!wordCount) return '1 min';
+                const minutes = Math.ceil(wordCount / 200);
+                return `${minutes} min`;
+            }
+        };
+        
+        // Initialize when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => ArchiveLoader.init());
+        } else {
+            ArchiveLoader.init();
+        }
+    </script>
 </body>
 </html>
