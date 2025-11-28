@@ -40,13 +40,34 @@ sources:
     priority: "high"
     description: "Anthropic updates and research"
   
-  # General Tech News
+  # General Tech News & Analysis
   - name: "Hacker News"
     url: "https://hnrss.org/frontpage"
     type: "rss"
     category: "general_tech"
     priority: "medium"
     description: "Top tech stories from HN"
+  
+  - name: "Axios"
+    url: "https://api.axios.com/feed/technology"
+    type: "rss"
+    category: "tech_news"
+    priority: "high"
+    description: "Axios Technology - Breaking tech and AI news"
+  
+  - name: "AI News"
+    url: "https://www.artificialintelligence-news.com/feed/"
+    type: "rss"
+    category: "ai_news"
+    priority: "high"
+    description: "AI News - Enterprise AI and data sovereignty coverage"
+  
+  - name: "Business Insider AI"
+    url: "https://www.businessinsider.com/sai/rss"
+    type: "rss"
+    category: "ai_business"
+    priority: "high"
+    description: "Business Insider - AI and tech business news"
   
   # Newsletters with RSS
   - name: "Every.to"
