@@ -134,25 +134,38 @@ sleep 30 && open https://jeffcoy.net
 ## 🔧 Troubleshooting
 
 ### Issue: "No new articles" or very few articles
-**Cause:** Not many articles published in last 72 hours
+**Cause:** Pipeline already ran today and filtered out recently published articles
+
+**How it works:**
+- Pipeline looks back 7 days for articles
+- **History filter** prevents republishing articles from last 3 days
+- If you run multiple times per day, only excludes articles from previous days
+- This allows fresh scoring throughout the day with NEW articles
 
 **Solutions:**
-1. Increase lookback window:
+1. **Wait for new articles:** Check back in a few hours when RSS feeds update
+2. **Increase lookback window:**
    ```bash
    # Edit pipeline/config.yaml
-   lookback_hours: 168  # 7 days instead of 3
+   lookback_hours: 336  # 14 days
    ```
 
-2. Add more RSS sources:
+3. **Add more RSS sources:**
    ```bash
    # Edit pipeline/ingestion/sources.yaml
    # Add feeds from your favorite sites
    ```
 
-3. Lower quality threshold:
+4. **Lower quality threshold:**
    ```bash
    # Edit pipeline/config.yaml
-   min_word_count: 50  # Lower from 100
+   min_word_count: 30  # Lower from 50
+   ```
+
+5. **Adjust history filter:**
+   ```bash
+   # Edit pipeline/run_pipeline.py line ~146
+   lookback_days=2  # Only exclude last 2 days instead of 3
    ```
 
 ---
