@@ -413,6 +413,12 @@ const ContentLoader = {
             heroLink.textContent = 'Read Article';
             heroLink.style.pointerEvents = 'auto';
             heroLink.style.opacity = '1';
+            
+            // Ensure click works by removing any preventDefault
+            heroLink.onclick = function(e) {
+                // Let the link work normally
+                return true;
+            };
         }
     },
     

@@ -8,54 +8,109 @@ const SearchEngine = {
     searchStartTime: 0,
     
     /**
+     * Quick check if a file exists (HEAD request)
+     */
+    async fileExists(url) {
+        try {
+            const response = await fetch(url, { method: 'HEAD' });
+            return response.ok;
+        } catch {
+            return false;
+        }
+    },
+    
+    /**
      * Initialize search engine - load all articles from daily files
+     * Optimized: only loads files that exist
      */
     async init() {
         try {
+            console.time('Search index load');
             const today = new Date();
-            const promises = [];
+            const filesToLoad = [];
             
-            // Load last 30 days of daily files (reduced for faster loading)
-            for (let i = 0; i < 30; i++) {
+            // Phase 1: Quick scan for existing files (last 14 days only for speed)
+            console.log('Scanning for existing files...');
+            const scanPromises = [];
+            
+            for (let i = 0; i < 14; i++) {
                 const date = new Date(today);
                 date.setDate(date.getDate() - i);
                 const dateStr = date.toISOString().split('T')[0];
                 
-                // Try base file and suffixed versions
-                for (let suffix of ['', '_2', '_3', '_4', '_5']) {
+                // Check base file and first 2 suffixes (most common)
+                for (let suffix of ['', '_2', '_3']) {
                     const filename = `content/daily/${dateStr}${suffix}.json`;
-                    promises.push(
-                        Promise.race([
-                            fetch(filename)
-                                .then(res => res.ok ? res.json() : null)
-                                .catch(() => null),
-                            new Promise(resolve => setTimeout(() => resolve(null), 2000)) // 2s timeout per file
-                        ])
+                    scanPromises.push(
+                        fetch(filename, { method: 'HEAD' })
+                            .then(res => res.ok ? filename : null)
+                            .catch(() => null)
                     );
                 }
             }
             
-            const results = await Promise.race([
-                Promise.all(promises),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout loading files')), 15000)) // 15s total timeout
-            ]);
+            // Wait for scans with timeout
+            const foundFiles = await Promise.race([
+                Promise.all(scanPromises),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Scan timeout')), 3000))
+            ]).catch(() => []);
             
-            const dailyFiles = results.filter(data => data !== null);
+            const existingFiles = foundFiles.filter(f => f !== null);
+            console.log(`Found ${existingFiles.length} existing files`);
             
-            // Collect all articles
-            dailyFiles.forEach(dailyData => {
-                if (dailyData && dailyData.articles && Array.isArray(dailyData.articles)) {
-                    dailyData.articles.forEach(article => {
-                        this.allArticles.push({
-                            ...article,
-                            date_display: dailyData.date_display || 'Unknown Date',
-                            date: dailyData.date || article.published?.split('T')[0] || 'unknown'
+            // Phase 2: Load only existing files in parallel
+            if (existingFiles.length === 0) {
+                console.warn('No files found, trying latest.json as fallback...');
+                // Fallback: try to load from latest.json
+                try {
+                    const response = await fetch('content/latest.json');
+                    if (response.ok) {
+                        const data = await response.json();
+                        // Get all articles from latest.json
+                        const allArticles = [
+                            data.hero,
+                            ...(data.headlines || []),
+                            ...(data.runners_up || [])
+                        ].filter(a => a);
+                        
+                        allArticles.forEach(article => {
+                            this.allArticles.push({
+                                ...article,
+                                date_display: 'Recent',
+                                date: article.published?.split('T')[0] || 'unknown'
+                            });
                         });
-                    });
+                    }
+                } catch (e) {
+                    console.error('Could not load fallback data:', e);
                 }
-            });
+            } else {
+                // Load all found files in parallel
+                const loadPromises = existingFiles.map(filename =>
+                    fetch(filename)
+                        .then(res => res.json())
+                        .catch(() => null)
+                );
+                
+                const results = await Promise.all(loadPromises);
+                const dailyFiles = results.filter(data => data !== null);
+                
+                // Collect all articles
+                dailyFiles.forEach(dailyData => {
+                    if (dailyData && dailyData.articles && Array.isArray(dailyData.articles)) {
+                        dailyData.articles.forEach(article => {
+                            this.allArticles.push({
+                                ...article,
+                                date_display: dailyData.date_display || 'Unknown Date',
+                                date: dailyData.date || article.published?.split('T')[0] || 'unknown'
+                            });
+                        });
+                    }
+                });
+            }
             
-            console.log(`✓ Search index loaded: ${this.allArticles.length} articles from ${dailyFiles.length} files`);
+            console.timeEnd('Search index load');
+            console.log(`✓ Search index loaded: ${this.allArticles.length} articles`);
             
             if (this.allArticles.length === 0) {
                 console.warn('⚠ No articles found in archive files');
