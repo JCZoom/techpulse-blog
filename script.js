@@ -319,7 +319,7 @@ const ContentLoader = {
             this.updateDate(data.date);
             
             if (data.hero) {
-                this.updateHero(data.hero);
+                this.updateHeroSection(data.hero);
             }
             
             if (data.headlines && data.headlines.length > 0) {
