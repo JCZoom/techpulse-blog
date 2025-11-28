@@ -1,8 +1,5 @@
 name = "techpulse-blog"
 compatibility_date = "2025-11-27"
 
-[site]
-bucket = "./"
-
 # This tells Cloudflare Pages to serve files from the root directory
-pages_build_output_dir = "./"
+pages_build_output_dir = "."
