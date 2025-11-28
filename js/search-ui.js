@@ -235,40 +235,62 @@ const SearchUI = {
     },
     
     /**
-     * Show syntax helper dropdown
+     * Show syntax helper modal
      */
     showSyntaxHelper(input) {
-        const helper = document.getElementById('syntaxHelper');
-        if (!helper) return;
-        
         this.syntaxHelperVisible = true;
         this.selectedHelperIndex = -1;
         this.renderSyntaxHelper(input.value);
-        helper.style.display = 'block';
     },
     
     /**
-     * Hide syntax helper dropdown
+     * Hide syntax helper modal
      */
     hideSyntaxHelper() {
-        const helper = document.getElementById('syntaxHelper');
-        if (!helper) return;
-        
+        const overlay = document.getElementById('syntaxHelperOverlay');
+        if (overlay) {
+            overlay.remove();
+        }
         this.syntaxHelperVisible = false;
         this.selectedHelperIndex = -1;
-        helper.style.display = 'none';
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+        
+        // Refocus search input
+        const searchInput = document.getElementById('mainSearchInput');
+        if (searchInput) searchInput.focus();
     },
     
     /**
-     * Render syntax helper items
+     * Render syntax helper as modal window
      */
     renderSyntaxHelper(query = '') {
-        const helper = document.getElementById('syntaxHelper');
-        if (!helper) return;
+        // Remove existing overlay if any
+        const existingOverlay = document.getElementById('syntaxHelperOverlay');
+        if (existingOverlay) {
+            existingOverlay.remove();
+        }
         
         const filtered = this.filterSyntaxItems(query);
         
-        let html = '<div class="syntax-helper-header">Search Syntax • Press / again to toggle</div>';
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.id = 'syntaxHelperOverlay';
+        overlay.className = 'syntax-helper-overlay';
+        overlay.onclick = (e) => {
+            if (e.target === overlay) this.hideSyntaxHelper();
+        };
+        
+        // Create modal
+        let html = `
+            <div class="syntax-helper" onclick="event.stopPropagation()">
+                <div class="syntax-helper-header">
+                    <span>Search Syntax</span>
+                    <span class="syntax-helper-close">Press ESC to close</span>
+                </div>
+                <div class="syntax-helper-list">
+        `;
         
         filtered.forEach((item, index) => {
             const activeClass = index === this.selectedHelperIndex ? 'active' : '';
@@ -289,7 +311,16 @@ const SearchUI = {
             html += '<div class="syntax-helper-item"><div class="syntax-helper-content"><div class="syntax-helper-desc">No matching syntax found</div></div></div>';
         }
         
-        helper.innerHTML = html;
+        html += `
+                </div>
+            </div>
+        `;
+        
+        overlay.innerHTML = html;
+        document.body.appendChild(overlay);
+        
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
     },
     
     /**
@@ -318,23 +349,27 @@ const SearchUI = {
      * Navigate syntax helper with arrow keys
      */
     navigateSyntaxHelper(direction) {
-        const items = document.querySelectorAll('.syntax-helper-item');
+        const items = document.querySelectorAll('.syntax-helper-item[data-index]');
         if (items.length === 0) return;
         
+        // Remove current active class
+        if (this.selectedHelperIndex >= 0 && this.selectedHelperIndex < items.length) {
+            items[this.selectedHelperIndex].classList.remove('active');
+        }
+        
+        // Update index
         this.selectedHelperIndex += direction;
         
-        if (this.selectedHelperIndex < -1) this.selectedHelperIndex = items.length - 1;
-        if (this.selectedHelperIndex >= items.length) this.selectedHelperIndex = -1;
+        // Wrap around
+        if (this.selectedHelperIndex < 0) this.selectedHelperIndex = items.length - 1;
+        if (this.selectedHelperIndex >= items.length) this.selectedHelperIndex = 0;
         
-        // Update active class
-        items.forEach((item, index) => {
-            if (index === this.selectedHelperIndex) {
-                item.classList.add('active');
-                item.scrollIntoView({ block: 'nearest' });
-            } else {
-                item.classList.remove('active');
-            }
-        });
+        // Add active class and scroll into view
+        if (this.selectedHelperIndex >= 0 && this.selectedHelperIndex < items.length) {
+            const activeItem = items[this.selectedHelperIndex];
+            activeItem.classList.add('active');
+            activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
     },
     
     /**
@@ -370,7 +405,10 @@ const SearchUI = {
      * Filter syntax helper based on query
      */
     filterSyntaxHelper(query) {
-        this.renderSyntaxHelper(query);
+        if (this.syntaxHelperVisible) {
+            this.selectedHelperIndex = -1; // Reset selection when filtering
+            this.renderSyntaxHelper(query);
+        }
     },
     
     /**
