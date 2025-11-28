@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        pre { 
+            background: #f5f5f5; 
+            padding: 10px; 
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>TechPulse Search Diagnostic</h1>
+    
+    <div id="results"></div>
+    
+    <script src="js/search-engine.js"></script>
+    <script>
+        const results = document.getElementById('results');
+        
+        async function runTests() {
+            results.innerHTML += '<div class="status info">Starting diagnostic tests...</div>';
+            
+            // Test 1: Check if daily files exist
+            results.innerHTML += '<h2>Test 1: Check Daily Files</h2>';
+            const testDates = ['2025-11-28', '2025-11-26', '2024-11-26'];
+            
+            for (const date of testDates) {
+                try {
+                    const response = await fetch(`content/daily/${date}.json`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        results.innerHTML += `<div class="status success">✓ Found ${date}.json (${data.articles?.length || 0} articles)</div>`;
+                    } else {
+                        results.innerHTML += `<div class="status error">✗ ${date}.json not found (${response.status})</div>`;
+                    }
+                } catch (error) {
+                    results.innerHTML += `<div class="status error">✗ Error loading ${date}.json: ${error.message}</div>`;
+                }
+            }
+            
+            // Test 2: Initialize search engine
+            results.innerHTML += '<h2>Test 2: Initialize Search Engine</h2>';
+            try {
+                console.log('Initializing SearchEngine...');
+                const count = await SearchEngine.init();
+                results.innerHTML += `<div class="status success">✓ Search engine initialized: ${count} articles loaded</div>`;
+                
+                // Show sample articles
+                if (SearchEngine.allArticles.length > 0) {
+                    results.innerHTML += '<h3>Sample Articles:</h3>';
+                    results.innerHTML += '<pre>' + JSON.stringify(SearchEngine.allArticles.slice(0, 3), null, 2) + '</pre>';
+                }
+            } catch (error) {
+                results.innerHTML += `<div class="status error">✗ Failed to initialize: ${error.message}</div>`;
+                console.error(error);
+            }
+            
+            // Test 3: Try a search
+            results.innerHTML += '<h2>Test 3: Test Search</h2>';
+            try {
+                const searchResults = SearchEngine.search('AI');
+                results.innerHTML += `<div class="status success">✓ Search completed: ${searchResults.count} results for "AI"</div>`;
+                results.innerHTML += `<div class="status info">Search time: ${searchResults.searchTime}s</div>`;
+                
+                if (searchResults.results.length > 0) {
+                    results.innerHTML += '<h3>Top 3 Results:</h3>';
+                    searchResults.results.slice(0, 3).forEach(r => {
+                        results.innerHTML += `<div class="status info">
+                            <strong>${r.title}</strong><br>
+                            Score: ${r.searchScore.toFixed(2)} | Category: ${r.category}
+                        </div>`;
+                    });
+                }
+            } catch (error) {
+                results.innerHTML += `<div class="status error">✗ Search failed: ${error.message}</div>`;
+                console.error(error);
+            }
+            
+            results.innerHTML += '<div class="status success">All tests complete!</div>';
+        }
+        
+        runTests();
+    </script>
+</body>
+</html>
