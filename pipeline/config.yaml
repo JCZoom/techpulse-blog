@@ -2,7 +2,7 @@
 
 pipeline:
   max_articles_per_day: 50    # Increased to get more runners-up
-  lookback_hours: 72          # Look back further for more articles
+  lookback_hours: 168         # Look back 7 days for more articles (previously published will be filtered)
   min_word_count: 50          # Lower threshold for more variety
   
 output:

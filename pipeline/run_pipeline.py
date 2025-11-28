@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from ingestion.rss_fetcher import RSSFetcher, load_sources_from_yaml
 from processing.deduplicator import process_articles
+from processing.history_filter import filter_by_history
 from processing.image_extractor import ImageExtractor
 from output.json_generator import ContentGenerator, assign_placeholder_scores
 
@@ -135,7 +136,17 @@ class TechPulsePipeline:
             title_similarity=0.85
         )
         
-        logger.info(f"✓ {len(articles)} articles after processing")
+        logger.info(f"✓ {len(articles)} articles after deduplication")
+        
+        # Filter out previously published articles
+        content_dir = self.config['output']['content_dir']
+        articles = filter_by_history(
+            articles,
+            content_dir=content_dir,
+            lookback_days=7  # Don't republish articles from last 7 days
+        )
+        
+        logger.info(f"✓ {len(articles)} articles after history filter")
         
         # Extract images from articles
         logger.info("Extracting images from articles...")

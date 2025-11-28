@@ -3,7 +3,7 @@
   "date_display": "November 28, 2025",
   "articles": [
     {
-      "id": "2025-11-26-5491",
+      "id": "2025-11-26-8809",
       "title": "A weekend ‘vibe code’ hack by Andrej Karpathy quietly sketches the missing layer of enterprise AI orchestration",
       "url": "https://venturebeat.com/ai/a-weekend-vibe-code-hack-by-andrej-karpathy-quietly-sketches-the-missing",
       "source": "VentureBeat AI",
@@ -13,7 +13,7 @@
       "word_count": 1518
     },
     {
-      "id": "2025-11-26-7132",
+      "id": "2025-11-26-1157",
       "title": "Black Forest Labs launches Flux.2 AI image models to challenge Nano Banana Pro and Midjourney",
       "url": "https://venturebeat.com/ai/black-forest-labs-launches-flux-2-ai-image-models-to-challenge-nano-banana",
       "source": "VentureBeat AI",
@@ -23,7 +23,7 @@
       "word_count": 2430
     },
     {
-      "id": "2025-11-26-8756",
+      "id": "2025-11-26-3492",
       "title": "Alibaba's AgentEvolver lifts model performance in tool use by ~30% using synthetic, auto-generated tasks",
       "url": "https://venturebeat.com/ai/alibabas-agentevolver-lifts-model-performance-in-tool-use-by-30-using",
       "source": "VentureBeat AI",
@@ -33,7 +33,7 @@
       "word_count": 1113
     },
     {
-      "id": "2025-11-25-3004",
+      "id": "2025-11-25-4069",
       "title": "What enterprises should know about The White House's new AI 'Manhattan Project' the Genesis Mission",
       "url": "https://venturebeat.com/ai/what-enterprises-should-know-about-the-white-houses-new-ai-manhattan-project",
       "source": "VentureBeat AI",
@@ -43,7 +43,7 @@
       "word_count": 2303
     },
     {
-      "id": "2025-11-26-0076",
+      "id": "2025-11-26-8839",
       "title": "OpenAI claims teen circumvented safety features before suicide that ChatGPT helped plan",
       "url": "https://techcrunch.com/2025/11/26/openai-claims-teen-circumvented-safety-features-before-suicide-that-chatgpt-helped-plan/",
       "source": "TechCrunch AI",
@@ -53,7 +53,7 @@
       "word_count": 50
     },
     {
-      "id": "2025-11-28-0971",
+      "id": "2025-11-28-5328",
       "title": "Show HN: Glasses to detect smart-glasses that have cameras",
       "url": "https://github.com/NullPxl/banrays",
       "source": "Hacker News",
@@ -67,13 +67,13 @@
     "total_articles": 6,
     "avg_score": 7.466666666666666,
     "sources": [
+      "VentureBeat AI",
       "TechCrunch AI",
-      "Hacker News",
-      "VentureBeat AI"
+      "Hacker News"
     ],
     "categories": [
-      "New Model Releases & Evals",
       "Building AI Division & Center of Excellence",
+      "New Model Releases & Evals",
       "Enterprise AI Strategy & Roadmap",
       "AI Privacy & Surveillance"
     ]
