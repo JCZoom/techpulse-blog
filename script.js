@@ -300,13 +300,23 @@ themeToggle.init();
 // ===== Dynamic Content Loading from JSON =====
 const ContentLoader = {
     async init() {
+        // Only run on homepage (index.html)
+        if (!document.querySelector('.hero-blog')) return;
+        
         try {
             const data = await this.loadLatestContent();
             
             if (!data) {
                 console.log('No dynamic content available, using static content');
+                // Still set today's date even if JSON doesn't load
+                this.updateDate(null);
                 return;
             }
+            
+            console.log('%c📡 Loading dynamic content...', 'color: #0066ff; font-weight: bold;');
+            
+            // Always update date first
+            this.updateDate(data.date);
             
             if (data.hero) {
                 this.updateHero(data.hero);
@@ -316,19 +326,17 @@ const ContentLoader = {
                 this.updateHeadlines(data.headlines);
             }
             
-            if (data.date) {
-                this.updateDate(data.date);
-            }
-            
             // Show "Show Me More" button if there are runners-up articles
             if (data.runners_up && data.runners_up.length > 0) {
                 this.showMoreButton(data.runners_up.length);
             }
             
-            console.log('✓ Content loaded successfully');
+            console.log('%c✓ Dynamic content loaded successfully!', 'color: #38ef7d; font-weight: bold;');
             
         } catch (error) {
             console.error('Failed to load content:', error);
+            // Still set today's date on error
+            this.updateDate(null);
         }
     },
     
@@ -697,25 +705,15 @@ const ContentLoader = {
     
     updateDate(dateStr) {
         const dateElement = document.getElementById('currentDate');
-        if (dateElement && dateStr) {
-            dateElement.textContent = dateStr;
-        }
-    },
-    
-    async init() {
-        // Only run on homepage (index.html)
-        if (!document.querySelector('.hero-blog')) return;
-        
-        const content = await this.loadLatestContent();
-        
-        if (content) {
-            console.log('%c📡 Loading dynamic content...', 'color: #0066ff; font-weight: bold;');
-            
-            this.updateDate(content.date);
-            this.updateHeroSection(content.hero);
-            this.updateHeadlines(content.headlines);
-            
-            console.log('%c✓ Dynamic content loaded successfully!', 'color: #38ef7d; font-weight: bold;');
+        if (dateElement) {
+            if (dateStr) {
+                dateElement.textContent = dateStr;
+            } else {
+                // Fallback to today's date if no date provided
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                dateElement.textContent = today.toLocaleDateString('en-US', options);
+            }
         }
     }
 };
