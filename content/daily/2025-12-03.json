@@ -1,0 +1,289 @@
+{
+  "date": "2025-12-03",
+  "date_display": "December 03, 2025",
+  "articles": [
+    {
+      "id": "2025-12-03-6355",
+      "title": "AI has redefined the talent game. Here’s how leaders are responding.",
+      "url": "https://venturebeat.com/ai/ai-has-redefined-the-talent-game-heres-how-leaders-are-responding",
+      "source": "VentureBeat AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T05:00:00",
+      "score": 8.3,
+      "word_count": 1264,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/70RwDaBcQY2hKd6dMB8G9/a908ac82fd1f03cc7328ab01348d62e8/AdobeStock_1532812121.jpeg?w=300&q=30"
+    },
+    {
+      "id": "2025-12-02-7089",
+      "title": "New training method boosts AI multimodal reasoning with smaller, smarter datasets",
+      "url": "https://venturebeat.com/ai/new-training-method-boosts-ai-multimodal-reasoning-with-smaller-smarter",
+      "source": "VentureBeat AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-02T12:30:00",
+      "score": 8.0,
+      "word_count": 1068,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/57BgmlVCrA4mEFbarMeSzK/81a1c29cdd915c98923f73b5aaca36f2/Multimodal_reasoning.jpg?w=300&q=30"
+    },
+    {
+      "id": "2025-12-03-1564",
+      "title": "EY and NVIDIA to help companies test and deploy physical AI",
+      "url": "https://www.artificialintelligence-news.com/news/ey-and-nvidia-to-help-companies-test-and-deploy-physical-ai/",
+      "source": "AI News",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T12:05:00",
+      "score": 8.0,
+      "word_count": 726,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/EY-and-NVIDIA-to-help-companies-test-and-deploy-physical-AI-scaled-e1764730291287.jpg"
+    },
+    {
+      "id": "2025-12-02-5740",
+      "title": "Frontier AI research lab tackles enterprise deployment challenges",
+      "url": "https://www.artificialintelligence-news.com/news/frontier-ai-research-lab-tackles-enterprise-deployment-challenges/",
+      "source": "AI News",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-02T16:26:07",
+      "score": 8.0,
+      "word_count": 1058,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/frontier-ai-research-lab-agentic-deployment-challenges-thomson-reuters-imperial-college-london-artificial-intelligence.jpg"
+    },
+    {
+      "id": "2025-12-03-2219",
+      "title": "Anthropic just revealed how AI-orchestrated cyberattacks actually work—Here’s what enterprises need to know",
+      "url": "https://www.artificialintelligence-news.com/news/ai-orchestrated-cyberattacks-anthropic-discovery/",
+      "source": "AI News",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T10:00:00",
+      "score": 7.8,
+      "word_count": 862,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/moritz-kindler-hh8l-uq5L48-unsplash-scaled.jpg"
+    },
+    {
+      "id": "2025-12-02-0524",
+      "title": "Headless vs. native semantic layer: The architectural key to unlocking 90%+ text-to-SQL accuracy",
+      "url": "https://venturebeat.com/ai/headless-vs-native-semantic-layer-the-architectural-key-to-unlocking-90-text",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-02T05:00:00",
+      "score": 7.7,
+      "word_count": 1511,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/38T0GwbOYoyOTaUAom6N1j/5c14ff7db16466dba5c69455f7f04f56/Infrastructure.png?w=300&q=30"
+    },
+    {
+      "id": "2025-12-03-7515",
+      "title": "Announcing the initial People-First AI Fund grantees",
+      "url": "https://openai.com/index/people-first-ai-fund-grantees",
+      "source": "OpenAI Blog",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T08:00:00",
+      "score": 7.7,
+      "word_count": 25,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-03-2852",
+      "title": "HTB AI Range offers experiments in cyber-resilience training",
+      "url": "https://www.artificialintelligence-news.com/news/htb-ai-range-testing-ai-security-in-sandbox-agentic-ai-experiments/",
+      "source": "AI News",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T14:46:14",
+      "score": 7.7,
+      "word_count": 596,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/htb-ai-range-hero.jpg"
+    },
+    {
+      "id": "2025-12-03-5486",
+      "title": "Can China’s chip stacking strategy really challenge Nvidia’s AI dominance?",
+      "url": "https://www.artificialintelligence-news.com/news/china-chip-stacking-strategy-nvidia/",
+      "source": "AI News",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T09:00:00",
+      "score": 7.7,
+      "word_count": 955,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/engin-akyurt-6KUqIqVpR6Y-unsplash-2-scaled.jpg"
+    },
+    {
+      "id": "2025-12-03-8456",
+      "title": "OpenAI's 'Code Red' scramble",
+      "url": "https://www.therundown.ai/p/openais-code-red-scramble",
+      "source": "The Rundown AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T10:00:29",
+      "score": 7.7,
+      "word_count": 1419,
+      "image_url": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/48339e41-4d07-4c16-8f39-9b30434551e5/codered.jpg"
+    },
+    {
+      "id": "2025-12-01-1685",
+      "title": "AI business reality – what enterprise leaders need to know",
+      "url": "https://www.artificialintelligence-news.com/news/ai-business-reality-what-enterprise-leaders-need-know/",
+      "source": "AI News",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T08:00:00",
+      "score": 7.5,
+      "word_count": 1019,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/ai-business-reality-enterprise-leaders.jpg"
+    },
+    {
+      "id": "2025-12-03-3906",
+      "title": "Vikram Sinha on Indosat’s role in shaping Indonesia’s AI transformation",
+      "url": "https://www.mckinsey.com/featured-insights/future-of-asia/vikram-sinha-on-indosats-role-in-shaping-indonesias-ai-transformation",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-12-03T00:00:00",
+      "score": 7.5,
+      "word_count": 24,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-03-1246",
+      "title": "Another bid to block state AI regulation has failed…for now",
+      "url": "https://techcrunch.com/2025/12/03/another-bid-to-block-state-ai-regulation-has-failedfor-now/",
+      "source": "TechCrunch AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-03T16:06:35",
+      "score": 7.4,
+      "word_count": 31,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-1246479507.jpg?w=1024"
+    },
+    {
+      "id": "2025-12-03-0521",
+      "title": "Amazon challenges competitors with on-premises Nvidia ‘AI Factories’",
+      "url": "https://techcrunch.com/2025/12/02/amazon-challenges-competitors-with-on-premises-nvidia-ai-factories/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-03T00:43:37",
+      "score": 7.4,
+      "word_count": 22,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/12/Amazon-AWS-AI-Factory.jpg?resize=1200,675"
+    },
+    {
+      "id": "2025-12-01-6743",
+      "title": "OpenAI takes an ownership stake in Thrive Holdings to accelerate enterprise AI adoption",
+      "url": "https://openai.com/index/thrive-holdings",
+      "source": "OpenAI Blog",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T05:00:00",
+      "score": 7.4,
+      "word_count": 38,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-02-6813",
+      "title": "Amazon previews 3 AI agents, including ‘Kiro’ that can code on its own for days",
+      "url": "https://techcrunch.com/2025/12/02/amazon-previews-3-ai-agents-including-kiro-that-can-code-on-its-own-for-days/",
+      "source": "TechCrunch AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-02T22:18:01",
+      "score": 7.3,
+      "word_count": 19,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resize=1200,849"
+    },
+    {
+      "id": "2025-12-01-4548",
+      "title": "Accenture and OpenAI accelerate enterprise AI success",
+      "url": "https://openai.com/index/accenture-partnership",
+      "source": "OpenAI Blog",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T05:00:00",
+      "score": 7.3,
+      "word_count": 24,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-03-8985",
+      "title": "De minimis disrupted: Managing shifts in duty exemptions",
+      "url": "https://www.mckinsey.com/capabilities/geopolitics/our-insights/de-minimis-disrupted-managing-shifts-in-duty-exemptions",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-12-03T00:00:00",
+      "score": 7.3,
+      "word_count": 33,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-01-0513",
+      "title": "Building the AI muscle of your business leaders",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/building-the-ai-muscle-of-your-business-leaders",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T00:00:00",
+      "score": 7.3,
+      "word_count": 21,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-03-0619",
+      "title": "Google Photos’ 2025 Recap turns to Gemini to find your highlights",
+      "url": "https://techcrunch.com/2025/12/03/google-photos-2025-recap-turns-to-gemini-to-find-your-highlights/",
+      "source": "TechCrunch AI",
+      "category": "New Model Releases & Evals",
+      "published": "2025-12-03T16:00:00",
+      "score": 7.2,
+      "word_count": 24,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/12/Google-Photos-Recap-2025-12-03-at-10.34.31-AM.jpg?resize=1200,751"
+    },
+    {
+      "id": "2025-12-03-5291",
+      "title": "All the biggest news from AWS’ big tech show re:Invent 2025",
+      "url": "https://techcrunch.com/2025/12/02/all-the-biggest-news-from-aws-big-tech-show-reinvent-2025/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-03T01:06:25",
+      "score": 7.2,
+      "word_count": 18,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2024/11/GettyImages-2179195367.jpg?resize=1200,746"
+    },
+    {
+      "id": "2025-12-02-4173",
+      "title": "Google tests merging AI Overviews with AI Mode",
+      "url": "https://techcrunch.com/2025/12/02/google-tests-merging-ai-overviews-with-ai-mode/",
+      "source": "TechCrunch AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-02T22:26:34",
+      "score": 7.1,
+      "word_count": 21,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/09/google-ai-mode-techcrunch.jpg?resize=1200,800"
+    },
+    {
+      "id": "2025-12-01-8032",
+      "title": "AI cracks 30-year math problem",
+      "url": "https://www.therundown.ai/p/ai-cracks-30-year-math-problem",
+      "source": "The Rundown AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T11:00:11",
+      "score": 7.0,
+      "word_count": 1599,
+      "image_url": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/6017847e-ac4b-427d-a42c-a95641448e08/Gemini_Generated_Image_2efnmy2efnmy2efn.png"
+    },
+    {
+      "id": "2025-12-01-2531",
+      "title": "OpenAI and NORAD team up to bring new magic to “NORAD Tracks Santa”",
+      "url": "https://openai.com/index/norad-holiday-collaboration",
+      "source": "OpenAI Blog",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T06:00:00",
+      "score": 6.8,
+      "word_count": 29,
+      "image_url": null
+    }
+  ],
+  "stats": {
+    "total_articles": 24,
+    "avg_score": 7.512500000000002,
+    "sources": [
+      "McKinsey Technology",
+      "The Rundown AI",
+      "OpenAI Blog",
+      "VentureBeat AI",
+      "TechCrunch AI",
+      "AI News"
+    ],
+    "categories": [
+      "Building AI Division & Center of Excellence",
+      "McKinsey & Strategy Reports",
+      "Enterprise AI Adoption for SaaS",
+      "New Model Releases & Evals",
+      "Enterprise AI Strategy & Roadmap"
+    ]
+  }
+}

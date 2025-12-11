@@ -140,8 +140,8 @@ class RSSFetcher:
         # Extract content (try multiple fields)
         content = self._extract_content(entry)
         
-        # Skip if no content
-        if not content or len(content.split()) < 10:
+        # Skip if no content (lowered threshold from 10 to 3 words to capture short descriptions)
+        if not content or len(content.split()) < 3:
             return None
         
         # Extract author

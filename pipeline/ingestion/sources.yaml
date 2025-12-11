@@ -33,12 +33,12 @@ sources:
     priority: "high"
     description: "Official OpenAI announcements and research"
   
-  - name: "Anthropic Blog"
-    url: "https://www.anthropic.com/news/rss.xml"
+  - name: "Anthropic News"
+    url: "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml"
     type: "rss"
     category: "ai_research"
     priority: "high"
-    description: "Anthropic updates and research"
+    description: "Anthropic news and product updates (community RSS)"
   
   # General Tech News & Analysis
   - name: "Hacker News"
@@ -48,12 +48,13 @@ sources:
     priority: "medium"
     description: "Top tech stories from HN"
   
-  - name: "Axios"
-    url: "https://api.axios.com/feed/technology"
-    type: "rss"
-    category: "tech_news"
-    priority: "high"
-    description: "Axios Technology - Breaking tech and AI news"
+  # DISABLED: Axios API feed returns stale 2021 data
+  # - name: "Axios"
+  #   url: "https://api.axios.com/feed/technology"
+  #   type: "rss"
+  #   category: "tech_news"
+  #   priority: "high"
+  #   description: "Axios Technology - Breaking tech and AI news (FEED BROKEN - returns old data)"
   
   - name: "AI News"
     url: "https://www.artificialintelligence-news.com/feed/"
@@ -62,43 +63,47 @@ sources:
     priority: "high"
     description: "AI News - Enterprise AI and data sovereignty coverage"
   
-  - name: "Business Insider AI"
-    url: "https://www.businessinsider.com/sai/rss"
-    type: "rss"
-    category: "ai_business"
-    priority: "high"
-    description: "Business Insider - AI and tech business news"
+  # Business Insider (RSS feed deprecated/moved - needs investigation)
+  # - name: "Business Insider AI"
+  #   url: "https://www.businessinsider.com/sai/rss"
+  #   type: "rss"
+  #   category: "ai_business"
+  #   priority: "high"
+  #   description: "Business Insider - AI and tech business news"
   
+  # DISABLED: Every.to does not provide RSS feed (returns HTML)
   # Newsletters with RSS
-  - name: "Every.to"
-    url: "https://every.to/feed"
-    type: "rss"
-    category: "tech_analysis"
-    priority: "medium"
-    description: "Tech business and strategy analysis"
+  # - name: "Every.to"
+  #   url: "https://every.to/feed"
+  #   type: "rss"
+  #   category: "tech_analysis"
+  #   priority: "medium"
+  #   description: "Tech business and strategy analysis (NO RSS FEED AVAILABLE)"
   
   # Additional AI Sources
   - name: "The Rundown AI"
-    url: "https://www.therundown.ai/feed"
+    url: "https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml"
     type: "rss"
     category: "ai_news"
     priority: "medium"
-    description: "Daily AI news roundup"
+    description: "Daily AI news roundup (Beehiiv RSS feed)"
   
-  - name: "AI News (Superhuman AI)"
-    url: "https://www.superhuman.ai/feed"
-    type: "rss"
+  # ENABLED: Superhuman AI via HTML scraping (no RSS available)
+  - name: "Superhuman AI"
+    sitemap_url: "https://www.superhuman.ai/sitemap.xml"
+    url_pattern: "/p/[^/]+$"
+    type: "html"
     category: "ai_news"
-    priority: "medium"
-    description: "AI tools and news"
+    priority: "high"
+    description: "AI tools and news (HTML scraping via sitemap)"
   
   # McKinsey AI Insights (if available)
   - name: "McKinsey Technology"
-    url: "https://www.mckinsey.com/capabilities/mckinsey-digital/rss"
+    url: "https://www.mckinsey.com/insights/rss"
     type: "rss"
     category: "tech_strategy"
-    priority: "low"
-    description: "Enterprise tech insights"
+    priority: "medium"
+    description: "McKinsey insights on AI, tech, and business strategy"
 
 # Podcast RSS feeds (Apple Podcasts have RSS feeds)
 podcast_sources:

@@ -1,0 +1,379 @@
+{
+  "date": "2025-12-01",
+  "date_display": "December 01, 2025",
+  "articles": [
+    {
+      "id": "2025-12-01-8286",
+      "title": "DeepSeek just dropped two insanely powerful AI models that rival GPT-5 and they're totally free",
+      "url": "https://venturebeat.com/ai/deepseek-just-dropped-two-insanely-powerful-ai-models-that-rival-gpt-5-and",
+      "source": "VentureBeat AI",
+      "category": "New Model Releases & Evals",
+      "published": "2025-12-01T18:45:00",
+      "score": 8.3,
+      "word_count": 1458,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5ES6W4nvyHb43sMUXkajjl/ff5ab2072252e730e21c83f1cc069ab5/nuneybits_Vector_art_of_neon_cyberpunk_whale_over_circuits_1914c178-faa7-480a-8588-6cf371c38f50.webp?w=300&q=30"
+    },
+    {
+      "id": "2025-12-01-8617",
+      "title": "MIT offshoot Liquid AI releases blueprint for enterprise-grade small-model training",
+      "url": "https://venturebeat.com/ai/mit-offshoot-liquid-ai-releases-blueprint-for-enterprise-grade-small-model",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T17:24:00",
+      "score": 8.3,
+      "word_count": 1251,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/3hcEEwXVdJKS26YG86bl1G/70c2a214da37d17bae5a5600a5400225/1ouQYIrPZZ4x2Dcn0fD9c.png?w=300&q=30"
+    },
+    {
+      "id": "2025-12-01-2838",
+      "title": "OpenAGI emerges from stealth with an AI agent that it claims crushes OpenAI and Anthropic",
+      "url": "https://venturebeat.com/ai/openagi-emerges-from-stealth-with-an-ai-agent-that-it-claims-crushes-openai",
+      "source": "VentureBeat AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T14:00:00",
+      "score": 8.3,
+      "word_count": 1740,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5wjOPbF01UMvzZRtAZCSM4/694d09a7536a57caed8a5300246a889f/nuneybits_Vector_art_of_robot_hands_typing_computer_keyboard_180c6399-122e-4ce1-91b5-223f076b2a38.webp?w=300&q=30"
+    },
+    {
+      "id": "2025-11-30-3032",
+      "title": "Hybrid cloud security must be rebuilt for an AI war it was never designed to fight",
+      "url": "https://venturebeat.com/security/hybrid-cloud-security-reinvented-ai-era",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-30T16:00:00",
+      "score": 8.2,
+      "word_count": 2341,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/1FJkY0juMySv2GWt60vocX/20fb6a9a39030dafe3d03bdc8d1ff5ca/HERO_IMAGE_FINAL_CLOUD_DETECTION_AND_RESPONSE.jpg?w=300&q=30"
+    },
+    {
+      "id": "2025-12-01-7022",
+      "title": "AI business reality – what enterprise leaders need to know",
+      "url": "https://www.artificialintelligence-news.com/news/ai-business-reality-what-enterprise-leaders-need-know/",
+      "source": "AI News",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T08:00:00",
+      "score": 8.1,
+      "word_count": 1019,
+      "image_url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/12/ai-business-reality-enterprise-leaders.jpg"
+    },
+    {
+      "id": "2025-12-01-7971",
+      "title": "OpenAI takes an ownership stake in Thrive Holdings to accelerate enterprise AI adoption",
+      "url": "https://openai.com/index/thrive-holdings",
+      "source": "OpenAI Blog",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T05:00:00",
+      "score": 8.0,
+      "word_count": 38,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-01-5286",
+      "title": "Agent coordination is the missing piece in AI commerce — new AWS and Visa blueprints target the gap",
+      "url": "https://venturebeat.com/ai/agent-coordination-is-the-missing-piece-in-ai-commerce-new-aws-and-visa",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T05:00:00",
+      "score": 7.9,
+      "word_count": 887,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/4Lv5iyTanLLH1Vy8WuC9Wp/8f962a277a3987de13437ea75064a3b8/crimedy7_illustration_of_robots_shopping_--ar_169_--v_7_d85ed49f-a613-469d-9f88-1e1bd75b4808_3.png?w=300&q=30"
+    },
+    {
+      "id": "2025-12-01-7822",
+      "title": "Accenture and OpenAI accelerate enterprise AI success",
+      "url": "https://openai.com/index/accenture-partnership",
+      "source": "OpenAI Blog",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T05:00:00",
+      "score": 7.9,
+      "word_count": 24,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-01-3660",
+      "title": "Building the AI muscle of your business leaders",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/building-the-ai-muscle-of-your-business-leaders",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T00:00:00",
+      "score": 7.9,
+      "word_count": 21,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-30-6054",
+      "title": "Ontology is the real guardrail: How to stop AI agents from misunderstanding your business",
+      "url": "https://venturebeat.com/ai/ontology-is-the-real-guardrail-how-to-stop-ai-agents-from-misunderstanding",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-30T05:00:00",
+      "score": 7.8,
+      "word_count": 895,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/1xmX7PAnWaMvvccyhV2VRi/6234f3f1d5a12776dafa253d33a55641/Ontology.png?w=300&q=30"
+    },
+    {
+      "id": "2025-12-01-6030",
+      "title": "AI cracks 30-year math problem",
+      "url": "https://www.therundown.ai/p/ai-cracks-30-year-math-problem",
+      "source": "The Rundown AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T11:00:11",
+      "score": 7.8,
+      "word_count": 1599,
+      "image_url": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/6017847e-ac4b-427d-a42c-a95641448e08/Gemini_Generated_Image_2efnmy2efnmy2efn.png"
+    },
+    {
+      "id": "2025-12-01-5229",
+      "title": "OpenAI’s investment into Thrive Holdings is its latest circular deal",
+      "url": "https://techcrunch.com/2025/12/01/openais-investment-into-thrive-holdings-is-its-latest-circular-deal/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T16:58:17",
+      "score": 7.6,
+      "word_count": 34,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2197181602.jpg?w=1024"
+    },
+    {
+      "id": "2025-12-01-0853",
+      "title": "Black Forest Labs raises $300M at $3.25B valuation",
+      "url": "https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T14:08:13",
+      "score": 7.6,
+      "word_count": 38,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/12/6844c7ed531e3aa09958eea8a9deae8bdabd0b54-3721x2798-1.png?resize=1200,902"
+    },
+    {
+      "id": "2025-12-01-5539",
+      "title": "Construction workers are cashing in on the AI boom",
+      "url": "https://techcrunch.com/2025/12/01/construction-workers-are-cashing-in-on-the-ai-boom/",
+      "source": "TechCrunch AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T19:13:50",
+      "score": 7.5,
+      "word_count": 24,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-2152222109.jpg?resize=1200,800"
+    },
+    {
+      "id": "2025-12-01-0917",
+      "title": "Nvidia’s $2B Synopsys bet tightens its grip on the chip-design stack",
+      "url": "https://techcrunch.com/2025/12/01/nvidias-2b-synopsys-bet-tightens-its-grip-on-the-chip-design-stack/",
+      "source": "TechCrunch AI",
+      "category": "Big Tech Moves & Partnerships",
+      "published": "2025-12-01T16:32:50",
+      "score": 7.5,
+      "word_count": 34,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192215566.jpg?resize=1200,800"
+    },
+    {
+      "id": "2025-12-01-7313",
+      "title": "OpenAI and NORAD team up to bring new magic to “NORAD Tracks Santa”",
+      "url": "https://openai.com/index/norad-holiday-collaboration",
+      "source": "OpenAI Blog",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T06:00:00",
+      "score": 7.4,
+      "word_count": 29,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-01-9614",
+      "title": "Ask HN: Who is hiring? (December 2025)",
+      "url": "https://news.ycombinator.com/item?id=46108941",
+      "source": "Hacker News",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-12-01T16:01:26",
+      "score": 7.4,
+      "word_count": 145,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-30-9400",
+      "title": "New report examines how David Sacks might profit from Trump administration role",
+      "url": "https://techcrunch.com/2025/11/30/new-report-examines-how-david-sacks-might-profit-from-trump-administration-role/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-30T21:39:04",
+      "score": 7.3,
+      "word_count": 35,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2019/10/GettyImages-604487976.jpg?resize=1200,798"
+    },
+    {
+      "id": "2025-12-01-2398",
+      "title": "Data center energy demand forecasted to soar nearly 300% through 2035",
+      "url": "https://techcrunch.com/2025/12/01/data-center-energy-demand-forecasted-to-soar-nearly-300-through-2035/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-12-01T19:08:42",
+      "score": 7.2,
+      "word_count": 24,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1453486183.jpeg?resize=1200,800"
+    },
+    {
+      "id": "2025-12-01-4665",
+      "title": "Amazon’s AI chatbot Rufus drove sales on Black Friday",
+      "url": "https://techcrunch.com/2025/12/01/amazons-ai-chatbot-rufus-drove-sales-on-black-friday/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-12-01T16:25:24",
+      "score": 7.2,
+      "word_count": 32,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2015/07/shutterstock_197269526.jpg?w=1000"
+    },
+    {
+      "id": "2025-11-26-3805",
+      "title": "Unlocking value with process intelligence in healthcare and beyond",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/unlocking-value-with-process-intelligence-in-healthcare-and-beyond",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-26T00:00:00",
+      "score": 7.2,
+      "word_count": 28,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-30-2522",
+      "title": "‘Avatar’ director James Cameron says generative AI is ‘horrifying’",
+      "url": "https://techcrunch.com/2025/11/30/avatar-director-james-cameron-says-generative-ai-is-horrifying/",
+      "source": "TechCrunch AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-30T22:53:15",
+      "score": 7.1,
+      "word_count": 23,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/11/avatar.jpeg?resize=1200,800"
+    },
+    {
+      "id": "2025-11-25-9283",
+      "title": "Agentic AI explained: When machines don’t just chat, but act",
+      "url": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/agentic-ai-explained-when-machines-dont-just-chat-but-act",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 17,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-4640",
+      "title": "Agents, robots, and us: Skill partnerships in the age of AI",
+      "url": "https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 21,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-2126",
+      "title": "Using AI to unlock growth: A conversation with ServiceNow’s Paul Fipps",
+      "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-ai-to-unlock-growth-a-conversation-with-servicenows-paul-fipps",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 19,
+      "image_url": null
+    },
+    {
+      "id": "2025-12-01-9538",
+      "title": "Response to \"Ruby Is Not a Serious Programming Language\"",
+      "url": "https://robbyonrails.com/articles/2025/12/01/why-so-serious/",
+      "source": "Hacker News",
+      "category": "New Model Releases & Evals",
+      "published": "2025-12-01T18:16:09",
+      "score": 7.0,
+      "word_count": 18,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-30-4667",
+      "title": "ChatGPT launched three years ago today",
+      "url": "https://techcrunch.com/2025/11/30/chatgpt-launched-three-years-ago-today/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-30T20:14:09",
+      "score": 6.9,
+      "word_count": 15,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2195918462.jpg?w=1024"
+    },
+    {
+      "id": "2025-11-25-0906",
+      "title": "The McKinsey Crossword: College Ball | No. 260",
+      "url": "https://www.mckinsey.com/featured-insights/the-mckinsey-crossword/november-25-2025",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.9,
+      "word_count": 50,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-28-6246",
+      "title": "Supabase hit $5B by turning down million-dollar contracts. Here’s why.",
+      "url": "https://techcrunch.com/video/supabase-hit-5b-by-turning-down-million-dollar-contracts-heres-why/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-28T23:00:00",
+      "score": 6.8,
+      "word_count": 56,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2024/09/postgres-bloat-1.jpeg?w=640"
+    },
+    {
+      "id": "2025-11-26-9512",
+      "title": "Becoming a tech-savvy leader",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/becoming-a-tech-savvy-leader",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-26T00:00:00",
+      "score": 6.7,
+      "word_count": 24,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-8596",
+      "title": "Global Economics Intelligence executive summary, October 2025",
+      "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/global-economics-intelligence",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.7,
+      "word_count": 27,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-6261",
+      "title": "Bold moves, fast scale-up: Europe’s path to cleantech competitiveness",
+      "url": "https://www.mckinsey.com/capabilities/sustainability/our-insights/bold-moves-fast-scaleup-europes-path-to-cleantech-competitiveness",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.7,
+      "word_count": 28,
+      "image_url": null
+    }
+  ],
+  "stats": {
+    "total_articles": 32,
+    "avg_score": 7.453124999999998,
+    "sources": [
+      "OpenAI Blog",
+      "McKinsey Technology",
+      "Hacker News",
+      "The Rundown AI",
+      "TechCrunch AI",
+      "AI News",
+      "VentureBeat AI"
+    ],
+    "categories": [
+      "McKinsey & Strategy Reports",
+      "New Model Releases & Evals",
+      "Big Tech Moves & Partnerships",
+      "Enterprise AI Adoption for SaaS",
+      "Enterprise AI Strategy & Roadmap",
+      "Building AI Division & Center of Excellence"
+    ]
+  }
+}

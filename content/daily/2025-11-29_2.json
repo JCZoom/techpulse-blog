@@ -1,0 +1,199 @@
+{
+  "date": "2025-11-29",
+  "date_display": "November 29, 2025",
+  "articles": [
+    {
+      "id": "2025-11-28-7773",
+      "title": "Anthropic says it solved the long-running AI agent problem with a new multi-session Claude SDK",
+      "url": "https://venturebeat.com/ai/anthropic-says-it-solved-the-long-running-ai-agent-problem-with-a-new-multi",
+      "source": "VentureBeat AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-28T19:30:00",
+      "score": 7.7,
+      "word_count": 675,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/5OhMVMuZnqqqn6ri40T71w/17233373dbf6bca0ca38c73008c35468/crimedy7_illustration_of_robots_running_a_marathon_--ar_169_-_98e4a2e9-af27-4fe5-8f24-c70cc6d9dd30_3.png?w=300&q=30"
+    },
+    {
+      "id": "2025-11-28-9215",
+      "title": "Beyond math and coding: New RL framework helps train LLM agents for complex, real-world tasks",
+      "url": "https://venturebeat.com/ai/beyond-math-and-coding-new-rl-framework-helps-train-llm-agents-for-complex",
+      "source": "VentureBeat AI",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-28T04:00:00",
+      "score": 7.6,
+      "word_count": 970,
+      "image_url": "https://images.ctfassets.net/jdtwqhzvc2n1/7B2gHkr0DFzxJgUpVa69Rq/141d4baf2328e9fde768357e5662624c/LLM_agent_using_tools.jpg?w=300&q=30"
+    },
+    {
+      "id": "2025-11-29-5886",
+      "title": "Show HN: I built Magiclip – an all-in-one AI studio",
+      "url": "https://magiclip.io/",
+      "source": "Hacker News",
+      "category": "Personal Productivity & Automation",
+      "published": "2025-11-29T12:04:23",
+      "score": 7.6,
+      "word_count": 224,
+      "image_url": "https://magiclip.io/assets/images/favicon.webp"
+    },
+    {
+      "id": "2025-11-28-6738",
+      "title": "Supabase hit $5B by turning down million-dollar contracts. Here’s why.",
+      "url": "https://techcrunch.com/video/supabase-hit-5b-by-turning-down-million-dollar-contracts-heres-why/",
+      "source": "TechCrunch AI",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-28T23:00:00",
+      "score": 7.4,
+      "word_count": 71,
+      "image_url": "https://techcrunch.com/wp-content/uploads/2024/09/postgres-bloat-1.jpeg?w=640"
+    },
+    {
+      "id": "2025-11-26-6957",
+      "title": "Unlocking value with process intelligence in healthcare and beyond",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/unlocking-value-with-process-intelligence-in-healthcare-and-beyond",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-26T00:00:00",
+      "score": 7.2,
+      "word_count": 28,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-6226",
+      "title": "Agentic AI explained: When machines don’t just chat, but act",
+      "url": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/agentic-ai-explained-when-machines-dont-just-chat-but-act",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 17,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-0197",
+      "title": "Agents, robots, and us: Skill partnerships in the age of AI",
+      "url": "https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 21,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-0237",
+      "title": "Using AI to unlock growth: A conversation with ServiceNow’s Paul Fipps",
+      "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-ai-to-unlock-growth-a-conversation-with-servicenows-paul-fipps",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Adoption for SaaS",
+      "published": "2025-11-25T00:00:00",
+      "score": 7.1,
+      "word_count": 19,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-24-5273",
+      "title": "The AI infrastructure of the future",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-ai-infrastructure-of-the-future",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-24T00:00:00",
+      "score": 7.1,
+      "word_count": 20,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-1439",
+      "title": "The McKinsey Crossword: College Ball | No. 260",
+      "url": "https://www.mckinsey.com/featured-insights/the-mckinsey-crossword/november-25-2025",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.9,
+      "word_count": 50,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-26-0260",
+      "title": "Becoming a tech-savvy leader",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/becoming-a-tech-savvy-leader",
+      "source": "McKinsey Technology",
+      "category": "Building AI Division & Center of Excellence",
+      "published": "2025-11-26T00:00:00",
+      "score": 6.7,
+      "word_count": 24,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-8660",
+      "title": "Global Economics Intelligence executive summary, October 2025",
+      "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/global-economics-intelligence",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.7,
+      "word_count": 27,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-25-7409",
+      "title": "Bold moves, fast scale-up: Europe’s path to cleantech competitiveness",
+      "url": "https://www.mckinsey.com/capabilities/sustainability/our-insights/bold-moves-fast-scaleup-europes-path-to-cleantech-competitiveness",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-25T00:00:00",
+      "score": 6.7,
+      "word_count": 28,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-24-8660",
+      "title": "Is Europe still on the launchpad? Reshaping its space ecosystem to lead",
+      "url": "https://www.mckinsey.com/industries/aerospace-and-defense/our-insights/is-europe-still-on-the-launchpad-reshaping-its-space-ecosystem-to-lead",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-24T00:00:00",
+      "score": 6.7,
+      "word_count": 27,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-24-7037",
+      "title": "Building data centers for Africa's unique market dynamics",
+      "url": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/building-data-centers-for-africas-unique-market-dynamics",
+      "source": "McKinsey Technology",
+      "category": "Enterprise AI Strategy & Roadmap",
+      "published": "2025-11-24T00:00:00",
+      "score": 6.7,
+      "word_count": 28,
+      "image_url": null
+    },
+    {
+      "id": "2025-11-24-5148",
+      "title": "Travel industry trends and the opportunity for private equity",
+      "url": "https://www.mckinsey.com/industries/private-capital/our-insights/travel-industry-trends-and-the-opportunity-for-private-equity",
+      "source": "McKinsey Technology",
+      "category": "McKinsey & Strategy Reports",
+      "published": "2025-11-24T00:00:00",
+      "score": 6.7,
+      "word_count": 19,
+      "image_url": null
+    }
+  ],
+  "stats": {
+    "total_articles": 16,
+    "avg_score": 7.062500000000002,
+    "sources": [
+      "TechCrunch AI",
+      "Hacker News",
+      "VentureBeat AI",
+      "McKinsey Technology"
+    ],
+    "categories": [
+      "Enterprise AI Adoption for SaaS",
+      "McKinsey & Strategy Reports",
+      "Personal Productivity & Automation",
+      "Enterprise AI Strategy & Roadmap",
+      "Building AI Division & Center of Excellence"
+    ]
+  }
+}

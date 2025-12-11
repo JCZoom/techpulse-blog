@@ -24,6 +24,7 @@ load_dotenv()
 sys.path.insert(0, str(Path(__file__).parent))
 
 from ingestion.rss_fetcher import RSSFetcher, load_sources_from_yaml
+from ingestion.html_fetcher import HTMLArticleFetcher
 from processing.deduplicator import process_articles
 from processing.history_filter import filter_by_history
 from processing.image_extractor import ImageExtractor
@@ -112,18 +113,61 @@ class TechPulsePipeline:
         """Fetch articles from all configured sources"""
         
         # Load sources
-        sources = load_sources_from_yaml(self.sources_file)
-        logger.info(f"Loading from {len(sources)} sources...")
+        all_sources = self._load_all_sources(self.sources_file)
+        rss_sources = all_sources['rss']
+        html_sources = all_sources['html']
         
-        # Fetch articles
-        fetcher = RSSFetcher(timeout=30, max_retries=3)
+        logger.info(f"Loading from {len(rss_sources)} RSS sources and {len(html_sources)} HTML sources...")
+        
         lookback_hours = self.config['pipeline']['lookback_hours']
+        all_articles = []
         
-        articles = fetcher.fetch_all_sources(sources, lookback_hours=lookback_hours)
+        # Fetch RSS articles
+        if rss_sources:
+            rss_fetcher = RSSFetcher(timeout=30, max_retries=3)
+            rss_articles = rss_fetcher.fetch_all_sources(rss_sources, lookback_hours=lookback_hours)
+            all_articles.extend(rss_articles)
+            logger.info(f"✓ Fetched {len(rss_articles)} articles from RSS sources")
         
-        logger.info(f"✓ Ingested {len(articles)} total articles")
+        # Fetch HTML articles
+        if html_sources:
+            html_fetcher = HTMLArticleFetcher(timeout=30)
+            for source in html_sources:
+                html_articles = html_fetcher.fetch_from_sitemap(
+                    sitemap_url=source['sitemap_url'],
+                    url_pattern=source['url_pattern'],
+                    source_name=source['name'],
+                    category=source.get('category', 'general'),
+                    lookback_hours=lookback_hours,
+                    max_articles=30  # Limit per HTML source
+                )
+                all_articles.extend(html_articles)
+            logger.info(f"✓ Fetched {len([a for a in all_articles if a not in rss_articles])} articles from HTML sources")
         
-        return articles
+        logger.info(f"✓ Ingested {len(all_articles)} total articles")
+        
+        return all_articles
+    
+    def _load_all_sources(self, yaml_file: str) -> dict:
+        """Load both RSS and HTML sources from YAML file"""
+        with open(yaml_file, 'r') as f:
+            config = yaml.safe_load(f)
+        
+        sources_list = config.get('sources', [])
+        
+        # Separate RSS and HTML sources
+        rss_sources = [s for s in sources_list if s.get('type') == 'rss']
+        html_sources = [s for s in sources_list if s.get('type') == 'html']
+        
+        # Sort RSS sources by priority
+        priority_order = {'high': 0, 'medium': 1, 'low': 2}
+        rss_sources.sort(key=lambda s: priority_order.get(s.get('priority', 'low'), 3))
+        html_sources.sort(key=lambda s: priority_order.get(s.get('priority', 'low'), 3))
+        
+        return {
+            'rss': rss_sources,
+            'html': html_sources
+        }
     
     def _process_content(self, articles: list) -> list:
         """Deduplicate, filter, and enrich articles"""
